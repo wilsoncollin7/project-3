@@ -1,5 +1,4 @@
 import './App.css';
-import bgImage from "./components/Background/backgroundImage.png"
 // import Background from "./components/Background"
 // import Description from "./components/Description"
 // import Display from "./components/Display"
@@ -11,16 +10,9 @@ import bgImage from "./components/Background/backgroundImage.png"
 function App() {
   return (
     <div className="App">
-      <div
-        class="bg_image"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          height: "100vh",
-        }}>
-      </div>
-      {/*<Navbar />
-      <Background /> 
+      <h1>project 3</h1>
+      {/* <Navbar />
+      <Background />
       <Display />
         <Search />
         <Description />
