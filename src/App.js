@@ -17,9 +17,8 @@ function App() {
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           height: "100vh",
-          color: "#f5f5f5"
         }}>
-        </div>
+      </div>
       {/*<Navbar />
       <Background /> 
       <Display />
