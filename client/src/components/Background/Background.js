@@ -4,7 +4,9 @@ import React from 'react';
 function Background() {
 
   return (
-    <div>
+    <div className="bgImage">
+      <h1>This is a test</h1>
+      
 
     </div>
   )
