@@ -1,22 +1,30 @@
 import './App.css';
-import Background from "./components/Background"
-import Description from "./components/Description"
-import Display from "./components/Display"
-import Navbar from "./components/Navbar"
-import Map from "./components/Map"
-import Search from "./components/Search"
+import bgImage from "./components/Background/backgroundImage.png"
+// import Background from "./components/Background"
+// import Description from "./components/Description"
+// import Display from "./components/Display"
+// import Navbar from "./components/Navbar"
+// import Map from "./components/Map"
+// import Search from "./components/Search"
 
 
 function App() {
   return (
     <div className="App">
-      <h1>project 3</h1>
-      <Navbar />
-      <Background />
+      <div
+        class="bg_image"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          height: "100vh",
+        }}>
+      </div>
+      {/*<Navbar />
+      <Background /> 
       <Display />
         <Search />
         <Description />
-        <Map />
+        <Map /> */}
     </div>
   );
 }
