@@ -4,7 +4,7 @@ import './App.css';
 // import Display from "./components/Display"
 // import Navbar from "./components/Navbar"
 // import Map from "./components/Map"
-// import Search from "./components/Search"
+import SearchPage from "./components/Search/SearchPage"
 
 
 function App() {
@@ -14,9 +14,10 @@ function App() {
       {/* <Navbar />
       <Background />
       <Display />
-        <Search />
         <Description />
         <Map /> */}
+      <SearchPage />
+
     </div>
   );
 }
