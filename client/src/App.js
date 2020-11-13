@@ -1,5 +1,5 @@
 import './App.css';
-// import Background from "./components/Background"
+import Background from "./components/Background/Background"
 // import Description from "./components/Description"
 // import Display from "./components/Display"
 // import Navbar from "./components/Navbar"
@@ -10,9 +10,10 @@ import SearchPage from "./components/Search/SearchPage"
 function App() {
   return (
     <div className="App">
-      <h1>project 3</h1>
-      {/* <Navbar />
+      
       <Background />
+      {/* <Navbar />
+      
       <Display />
         <Description />
         <Map /> */}
