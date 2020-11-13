@@ -4,15 +4,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 // components
 import Background from "./components/Background/Background";
-import Nav from "./components/Navbar/Navbar";
+import BootstrapNavbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+// import Description from "./components/Description"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Nav />
+        <BootstrapNavbar />
         <Background />
         <Switch>
           <Route exact path="/" component={Home} />
