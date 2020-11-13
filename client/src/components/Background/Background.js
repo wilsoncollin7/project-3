@@ -5,9 +5,7 @@ import "./Background.css";
 function Background() {
 
   return (
-    <div className="bgImage">
-  <h1>Hello!</h1>
-    </div>
+    <div className="bgImage"></div>
   )
 }
 
