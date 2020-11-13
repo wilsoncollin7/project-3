@@ -1,24 +1,27 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// styling
 import './App.css';
-// import Background from "./components/Background"
+// components
+import Background from "./components/Background/Background";
+import BootstrapNavbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home";
 // import Description from "./components/Description"
-// import Display from "./components/Display"
-// import Navbar from "./components/Navbar"
-// import Map from "./components/Map"
-import SearchPage from "./components/Search/SearchPage"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>project 3</h1>
-      {/* <Navbar />
-      <Background />
-      <Display />
-        <Description />
-        <Map /> */}
-      <SearchPage />
-
-    </div>
+    <Router>
+      <div className="app">
+        <BootstrapNavbar />
+        <Background />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
