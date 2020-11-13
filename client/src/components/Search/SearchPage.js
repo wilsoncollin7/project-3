@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
-import CountryList from './SearchList';
+import TrailList from './SearchList';
 
 const SearchPage = (props) => {
   const [input, setInput] = useState('');
@@ -17,8 +17,8 @@ const SearchPage = (props) => {
        });}
 
   const updateInput = async (input) => {
-     const filtered = trailListDefault.filter(country => {
-      return country.name.toLowerCase().includes(input.toLowerCase())
+     const filtered = trailListDefault.filter(trail => {
+      return trail.name.toLowerCase().includes(input.toLowerCase())
      })
      setInput(input);
      setTrailList(filtered);
@@ -30,10 +30,10 @@ const SearchPage = (props) => {
     <>
       <h1>Trail List</h1>
       <SearchBar 
-       input={input} 
+       value={input} 
        onChange={updateInput}
       />
-      <CountryList trailList={trailList}/>
+      <TrailList trailList={trailList}/>
     </>
    );
 }
