@@ -6,7 +6,7 @@ import Container from "../components/Container/Container";
 function Home() {
   return (
     <Container className="homeContainer">
-      <h1>Home</h1>
+      <h1>Where do you want to go?</h1>
       <SearchPage />
     </Container>
   )
