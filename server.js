@@ -1,8 +1,9 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const routes = require("./routes");
 const app = express();
+const path = require("path");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -14,9 +15,9 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 // app.use(routes);
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
