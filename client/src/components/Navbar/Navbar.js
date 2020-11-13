@@ -2,17 +2,17 @@ import React from 'react'
 import { BrowserRouter as Router } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import "./Navabar.css";
+import "./Navbar.css";
 
 class BootstrapNavbar extends React.Component {
 
   render() {
     return (
       <div>
-        <div className="row navbarRow">
-          <div className="col-md-12">
+        <div className="row" >
+          <div className="col col-md-12">
             <Router>
-              <Navbar bg="light" variant="light" expand="lg" sticky="top">
+              <Navbar id="navbarRow" bg="light" variant="light" expand="lg" sticky="top">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
