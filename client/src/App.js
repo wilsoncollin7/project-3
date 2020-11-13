@@ -6,9 +6,9 @@ import './App.css';
 import Background from "./components/Background/Background";
 import BootstrapNavbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 // import Description from "./components/Description"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     </Router>
