@@ -1,0 +1,16 @@
+.container {
+  margin: auto;
+  margin-top: 25vh;
+  text-align: center;
+  width: 80%;
+}
+
+.homeContainer {
+  margin: auto;
+  margin-top: 25vh;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10%;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
