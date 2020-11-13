@@ -1,13 +1,13 @@
 import React from 'react';
 // components
-import SearchPage from "../components/Search/SearchPage";
 import Container from "../components/Container/Container";
+import Login from "../components/Login/Login";
 
 function Home() {
   return (
-    <Container className="homeContainer">
-      <h1>Home</h1>
-      <SearchPage />
+    <Container className="loginContainer">
+      <h1>Login</h1>
+      <Login />
     </Container>
   )
 }
