@@ -8,7 +8,7 @@ import Description from "../components/Description/Description"
 function Home() {
   return (
     <Container className="homeContainer">
-      <h1>Home</h1>
+      <h1>Where do you want to go?</h1>
       <SearchPage />
       <br></br> 
       <Description />
