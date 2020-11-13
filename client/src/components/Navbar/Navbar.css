@@ -1,3 +1,8 @@
-.navbarRow {
+#navbarRow {
   border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.col {
+  text-align: right;
 }

@@ -13,7 +13,6 @@ function Home() {
       <br></br> 
       <Description />
     </Container>
-    
   )
 }
 
