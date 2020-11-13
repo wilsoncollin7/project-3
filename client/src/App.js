@@ -6,7 +6,6 @@ import './App.css';
 import Background from "./components/Background/Background";
 import BootstrapNavbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
-// import Description from "./components/Description"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

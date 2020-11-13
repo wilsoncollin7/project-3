@@ -1,6 +1,17 @@
 .descriptionContainer {
-  background-color: white;
-  border-radius: 5px;
+  width: 80%;
+  border-radius: 10px;
+  padding: 5%;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+.descriptionImage {
+  border-radius: 10px;
+  padding: 1%;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
   height: 100px;
   width: 100px;
+  margin-right: 10px;
 }
