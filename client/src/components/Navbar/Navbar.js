@@ -4,9 +4,8 @@ import React from 'react';
 function Navbar() {
 
   return (
-    <div>
-
-    </div>
+    <nav class="navbar navbar-light bg-light">
+    </nav>
   )
 }
 

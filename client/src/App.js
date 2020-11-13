@@ -1,23 +1,14 @@
 import './App.css';
-// import Background from "./components/Background"
-// import Description from "./components/Description"
-// import Display from "./components/Display"
-// import Navbar from "./components/Navbar"
-// import Map from "./components/Map"
-import SearchPage from "./components/Search/SearchPage"
-
+import Background from "./components/Background/Background";
+import SearchPage from "./components/Search/SearchPage";
+import Nav from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <h1>project 3</h1>
-      {/* <Navbar />
+    <div className="app">
+      <Nav />
       <Background />
-      <Display />
-        <Description />
-        <Map /> */}
       <SearchPage />
-
     </div>
   );
 }
