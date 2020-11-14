@@ -6,7 +6,6 @@ import Description from "../components/Description/Description"
 import Map from "../components/Map/Map"
 import "../components/Search/Search.css"
 
-
 function Home() {
   return (
     <div>

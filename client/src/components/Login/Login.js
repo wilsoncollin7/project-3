@@ -1,9 +1,8 @@
 import React from 'react';
 // styling
 import "./Login.css"
-import { BrowserRouter as Router } from "react-router-dom";
-import { Button } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import components
+import { Button } from "react-bootstrap";
 
 function Login() {
   return (
@@ -24,9 +23,9 @@ function Login() {
       value=""
       placeholder={"Password"}
     />
-     <Button variant="secondary" id="loginBtn" size="lg" block>
-    Login
-  </Button>
+    <Button variant="secondary" id="loginBtn" size="lg" block>
+      Login
+    </Button>
     </>
   )
 }

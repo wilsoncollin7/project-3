@@ -6,7 +6,6 @@ import Login from "../components/Login/Login";
 function Home() {
   return (
     <Container className="loginContainer">
-      
       <Login />
     </Container>
   )
