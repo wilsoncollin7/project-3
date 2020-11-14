@@ -7,8 +7,8 @@ import Background from "./components/Background/Background";
 import BootstrapNavbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Description from "./components/Description/Description"
-import Map from "./components/Map/Map"
+import Dashboard from "./pages/Dashboard";
+// import Description from "./components/Description"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
         </Switch>
         <Description />
