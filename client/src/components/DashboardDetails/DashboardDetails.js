@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 // style
 import "./DashboardDetails.css";
 // import components
-import { Card, Nav } from 'react-bootstrap'
+import Saved from "./Saved";
+import Visited from "./Visited";
+import User from "./User";
+import { Card, Nav } from 'react-bootstrap';
 
 function DashboardDetails() {
 
@@ -16,7 +19,7 @@ function DashboardDetails() {
     <>
      <Card>
         <Card.Body>
-          <Nav justify variant="tabs" defaultActiveKey="saved">
+          <Nav justify variant="tabs" defaultActiveKey="saved" className="dashNav">
             <Nav.Item>
               <Nav.Link 
               onClick={() => setDashboardState({
@@ -48,12 +51,14 @@ function DashboardDetails() {
               >User Account</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="logout">Logout</Nav.Link>
+              <Nav.Link href="login" eventKey="logout">Logout</Nav.Link>
             </Nav.Item>
           </Nav>
-          {dashboardState.saved && <h1>saved attrations</h1>}
-          {dashboardState.visited && <h1>visited attrations</h1>}
-          {dashboardState.user && <h1>user attrations</h1>}
+          <Card.Body>
+            {dashboardState.saved && <Saved />}
+            {dashboardState.visited && <Visited />}
+            {dashboardState.user && <User />}
+          </Card.Body>
         </Card.Body>
       </Card>
     </>
