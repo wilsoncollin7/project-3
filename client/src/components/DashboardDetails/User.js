@@ -17,7 +17,6 @@ function User() {
           <p>Number of saved hikes: 8</p>
         </div>
       </div>
-      
     </Card.Body>
   )
 }
