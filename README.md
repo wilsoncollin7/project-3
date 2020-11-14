@@ -18,6 +18,8 @@ Get methods:
 
 Params:
 
-?stateCode - Regular State code (i.e. NC, WY, etc.) ?q - string (%20 for spaces)
+?stateCode - Regular State code (i.e. NC, WY, etc.)
+?q - string (%20 for spaces)
+
 
 API KEY = &api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF
