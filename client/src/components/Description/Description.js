@@ -7,10 +7,10 @@ function Description() {
 
   return (
     <div>
-      <body class="descriptionContainer">
-        <p><Image class="descriptionImage"></Image>
+      <body className="descriptionContainer">
+        <p><Image className="descriptionImage"></Image>
           This is where the trail info will go
-          </p>
+        </p>
       </body>
     </div>
   )
