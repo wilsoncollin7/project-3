@@ -1,26 +1,26 @@
 module.exports = function (db) {
   return {
-    // Get all events
-    getEvents: function (req, res) {
-      db.Event.findAll({}).then(function (dbEvent) {
-        res.json(dbEvent);
+    // Get all trails
+    getTrails: function (req, res) {
+      db.Trail.findAll({}).then(function (dbTrail) {
+        res.json(dbTrail);
       });
     },
-    getUsersEvents: function (req, res) {
-      db.Event.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbEvent) {
-        res.json(dbEvent);
+    getUsersTrails: function (req, res) {
+      db.Trail.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbTrail) {
+        res.json(dbTrail);
       });
     },
-    // Create a new event
-    createEvent: function (req, res) {
-      db.Event.create(req.body).then(function (dbEvent) {
-        res.json(dbEvent);
+    // Create a new trail
+    createTrail: function (req, res) {
+      db.Trail.create(req.body).then(function (dbTrail) {
+        res.json(dbTrail);
       });
     },
-    // Delete an event
-    deleteEvent: function (req, res) {
-      db.Event.destroy({ where: { id: req.params.id } }).then(function (dbEvent) {
-        res.json(dbEvent);
+    // Delete an trail
+    deleteTrail: function (req, res) {
+      db.Trail.destroy({ where: { id: req.params.id } }).then(function (dbTrail) {
+        res.json(dbTrail);
       });
     }
   }
