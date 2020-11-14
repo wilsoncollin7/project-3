@@ -1,7 +1,11 @@
 .descriptionContainer {
   width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 2%;
+  text-align: left;
   border-radius: 10px;
-  padding: 5%;
+  padding: 2%;
   background-color: rgba(182, 182, 182, 0.527);
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
 }
@@ -13,5 +17,5 @@
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
   height: 100px;
   width: 100px;
-  margin-right: 10px;
+  margin-right: 50px;
 }
