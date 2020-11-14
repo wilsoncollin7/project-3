@@ -1,6 +1,8 @@
 import React from 'react';
 // styling
 import "./Login.css"
+// import components
+import { Button } from "react-bootstrap";
 
 function Login() {
   return (
@@ -20,9 +22,9 @@ function Login() {
       value=""
       placeholder={"Password"}
     />
-     <Button variant="secondary" id="loginBtn" size="lg" block>
-    Login
-  </Button>
+    <Button variant="secondary" id="loginBtn" size="lg" block>
+      Login
+    </Button>
     </>
   )
 }
