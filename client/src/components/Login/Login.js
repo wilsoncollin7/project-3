@@ -1,11 +1,15 @@
 import React from 'react';
 // styling
 import "./Login.css"
+import { BrowserRouter as Router } from "react-router-dom";
+import { Button } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Login() {
   return (
     <>
-    <h3>enter stuff</h3>
+    <h1 className="loginTitle">Login</h1>
+   
     <input 
       className="loginInput"
       key="random1"
