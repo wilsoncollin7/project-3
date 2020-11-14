@@ -1,16 +1,19 @@
 .container {
   margin: auto;
-  margin-top: 25vh;
+  margin-top: 15%;
   text-align: center;
   width: 80%;
 }
 
 .homeContainer {
   margin: auto;
-  margin-top: 25vh;
+  margin-top: 18vh;
   width: 80%;
   border-radius: 10px;
-  padding: 10%;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
   background-color: rgba(182, 182, 182, 0.527);
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
 }
