@@ -7,7 +7,7 @@ import "./Navbar.css";
 class BootstrapNavbar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="navbarDiv">
         <div className="row" >
           <div className="col col-md-12">
             <Router>
