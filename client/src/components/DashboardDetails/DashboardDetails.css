@@ -13,3 +13,27 @@
 .userCard {
   
 }
+
+.nav-item {
+  background-color: #90be6dc2;
+  border-radius: 2px;
+  color: #144552fc !important;
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+#nav-pills, .nav-link.active{
+  background: #fff !important;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+a {
+  color: aliceblue;
+}
+
+a:hover {
+  border-radius: 2px;
+  border: 1px #144552ac;
+  color: aliceblue;
+}
