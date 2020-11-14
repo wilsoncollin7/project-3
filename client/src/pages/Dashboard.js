@@ -1,11 +1,13 @@
 import React from 'react';
 // components
 import Container from "../components/Container/Container";
+import DashboardDetails from "../components/DashboardDetails/DashboardDetails";
 
 function Dashboard() {
   return (
     <Container className="dashboardContainer">
-      <h1>Dashboard</h1>
+      <h1>USERNAME</h1>
+      <DashboardDetails />
     </Container>
   )
 }
