@@ -1,8 +1,11 @@
 #navbarRow {
   border-bottom: 2px solid black;
   width: 100%;
+  height: 8vh;
 }
 
 .col {
   text-align: right;
+  padding: 0;
+  width: 100%;
 }
