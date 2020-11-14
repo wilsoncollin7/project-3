@@ -7,7 +7,8 @@ import { Button } from "react-bootstrap";
 function Login() {
   return (
     <>
-    <h3>enter stuff</h3>
+    <h1 className="loginTitle">Login</h1>
+   
     <input 
       className="loginInput"
       key="random1"
