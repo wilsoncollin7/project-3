@@ -20,6 +20,9 @@ function Login() {
       value=""
       placeholder={"Password"}
     />
+     <Button variant="secondary" id="loginBtn" size="lg" block>
+    Login
+  </Button>
     </>
   )
 }

@@ -2,4 +2,34 @@
   display: block;
   margin: auto;
   margin-top: 10px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.loginContainer{
+background-color: #144552ac;
+margin-top: 15%;
+border-radius: 10px;
+height: auto;
+padding-bottom: 10px;
+font-family: 'Raleway', sans-serif;
+
+}
+
+h1 {
+  padding-top: 5%;
+  font-family: 'Raleway', sans-serif;
+  color: aliceblue;
+}
+
+/* h3 {
+  font-family: 'Caveat', cursive;
+  color: aliceblue;
+} */
+
+#loginBtn {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  margin-top: 20px;
 }
