@@ -8,20 +8,21 @@ function CardComp() {
   return (
     <Card>
       <Card.Body>
-        <Nav justify variant="tabs" defaultActiveKey="/home">
+        <Nav justify variant="tabs" defaultActiveKey="saved">
           <Nav.Item>
-            <Nav.Link>Saved Attractions</Nav.Link>
+            <Nav.Link eventKey="saved">Saved Attractions</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>Visited Attractions</Nav.Link>
+            <Nav.Link eventKey="visited">Visited Attractions</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>User Account</Nav.Link>
+            <Nav.Link eventKey="user">User Account</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link>Logout</Nav.Link>
+            <Nav.Link eventKey="logout">Logout</Nav.Link>
           </Nav.Item>
         </Nav>
+        <h1>body contents</h1>
       </Card.Body>
     </Card>
   )
