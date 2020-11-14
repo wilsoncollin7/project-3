@@ -12,8 +12,8 @@
   width: 100vw;
   height: 8vh;
   padding: 0%;
- display: flex;
- padding-right: 15px;
+  display: flex;
+  padding-right: 15px;
 }
 
 .col {

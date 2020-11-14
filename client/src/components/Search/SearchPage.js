@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import SearchButton from "./SearchButton";
 import TrailList from './SearchList';
 
+
 const SearchPage = (props) => {
   const [input, setInput] = useState('');
   const [trailListDefault, setTrailListDefault] = useState();
