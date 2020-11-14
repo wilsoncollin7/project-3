@@ -8,7 +8,8 @@ import BootstrapNavbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-// import Description from "./components/Description"
+import Description from "./components/Description/Description"
+import Map from "./components/Map/Map"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
         </Switch>
+        <Description />
+        <Map />
       </div>
     </Router>
   );
