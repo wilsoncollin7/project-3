@@ -7,8 +7,7 @@
   background-image: url(./backgroundImage.png);
   height: 100%;
   background-repeat: no-repeat;
-  width: 100vw;
-  background-position: center center;
+  background-position: top center;
   background-size: 98%;
-  margin-top: 35px;
+  margin-top: 7%;
 }
