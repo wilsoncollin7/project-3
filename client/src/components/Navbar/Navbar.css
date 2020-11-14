@@ -1,7 +1,19 @@
+.navbarDiv {
+  overflow: hidden;
+}
+
+.row {
+  margin: 0;
+  padding-right: 10px;;
+}
+
 #navbarRow {
   border-bottom: 2px solid black;
-  width: 100%;
+  width: 100vw;
   height: 8vh;
+  padding: 0%;
+ display: flex;
+ padding-right: 15px;
 }
 
 .col {
