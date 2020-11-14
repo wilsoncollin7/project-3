@@ -18,6 +18,7 @@ class BootstrapNavbar extends React.Component {
                   <Nav className="ml-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+                    <Nav.Link href="/Login">Login</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </Navbar>
