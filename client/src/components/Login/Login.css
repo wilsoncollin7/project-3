@@ -26,4 +26,9 @@
   margin-right: 5%;
   width: 90%;
   margin-top: 20px;
+  background-color: #9aa86c;
+}
+
+#loginBtn:hover {
+  background-color: #9aa86cbb;
 }
