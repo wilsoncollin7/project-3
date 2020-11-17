@@ -7,13 +7,12 @@
 }
 
 .loginContainer{
-background-color: #144552ac;
-margin-top: 15%;
-border-radius: 10px;
-height: auto;
-padding-bottom: 10px;
-font-family: 'Raleway', sans-serif;
-
+  background-color: #144552ac;
+  margin-top: 15%;
+  border-radius: 10px;
+  height: auto;
+  padding-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .loginTitle {
@@ -22,14 +21,14 @@ font-family: 'Raleway', sans-serif;
   color: aliceblue;
 }
 
-/* h3 {
-  font-family: 'Caveat', cursive;
-  color: aliceblue;
-} */
-
 #loginBtn {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
   margin-top: 20px;
+  background-color: #9aa86c;
+}
+
+#loginBtn:hover {
+  background-color: #9aa86cbb;
 }

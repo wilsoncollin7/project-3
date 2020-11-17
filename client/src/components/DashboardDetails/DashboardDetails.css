@@ -10,7 +10,34 @@
   text-align: center;
 }
 
-.userCard {
-  text-align: center;
+
+.nav-item {
+  background-color: #9aa86cbb;
+  border-radius: 2px;
+  color: #144552fc !important;
+  font-family: 'Raleway', sans-serif;
 }
 
+#nav-pills, .nav-link.active{
+  background: #fff !important;
+  color: #144552fc !important;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+a {
+  color: #144552fc;
+}
+
+a.nav-link:hover {
+  color: aliceblue;
+  text-decoration: none !important;
+}
+
+a.nav-link.active:hover {
+  border: 1px #fff !important;
+}
+
+.card-body {
+  font-family: 'Raleway', sans-serif;
+}
