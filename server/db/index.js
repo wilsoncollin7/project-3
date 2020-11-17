@@ -14,4 +14,6 @@ mongoose.connect(
   }
 );
 
+// need to add err message to notify when connection isn't working
+
 module.exports = db;
