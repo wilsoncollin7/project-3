@@ -1,0 +1,20 @@
+.searchBar {
+  width: 55%;
+  margin: auto;
+  margin-top: 170px;
+  margin-bottom: 281px;
+  padding: 2%;
+  text-align: left;
+  border-radius: 10px;
+  padding: 2%;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+};
+
+.searchArea {
+  width: 20px;
+  background:"#F2F1F9"; 
+  border:"none"; 
+  padding:"0.5rem";
+  padding: 1%;
+};
