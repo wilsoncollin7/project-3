@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 // components
 import Container from "../Container/Container";
+<<<<<<< HEAD
+=======
+// import SearchPage from "../Search/SearchPage";
+>>>>>>> e273d800fd2f6ccdf1ddd85ebbc100fdc0985306
 import Description from "../Description/Description";
 import Map from "../Map/Map";
 import "../PageInfo/PageInfo.css";

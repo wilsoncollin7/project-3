@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+mongoose.promise = Promise;
 
 const trailSchema = new Schema({ 
   name: {
@@ -10,10 +11,6 @@ const trailSchema = new Schema({
   location: {
     type: String,
     required: 'Enter a location for the trail'
-  },
-  difficulty: {
-    type: Number,
-    required: 'Enter a difficulty from 1-5'
   }
 });
 
