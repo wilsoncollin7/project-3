@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // components
 import Container from "../Container/Container";
-import SearchPage from "../Search/SearchPage";
+// import SearchPage from "../Search/SearchPage";
 import Description from "../Description/Description";
 import Map from "../Map/Map";
 import "../PageInfo/PageInfo.css";
