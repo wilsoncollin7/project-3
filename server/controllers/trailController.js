@@ -1,4 +1,5 @@
 const db = require('../models');
+const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = function (db) {
   return {
