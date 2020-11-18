@@ -1,34 +1,82 @@
-.loginInput {
+.loginNav {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.loginCard, .registerCard {
+  text-align: center;
+}
+
+.loginRegisterCard {
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+
+.nav-item {
+  background-color: #9aa86cbb;
+  border-radius: 2px;
+  color: #144552fc !important;
+  font-family: 'Raleway', sans-serif;
+}
+
+#nav-pills, .nav-link.active{
+  background: #fff !important;
+  color: #144552fc !important;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+a {
+  color: #144552fc;
+}
+
+a.nav-link:hover {
+  color: aliceblue;
+  text-decoration: none !important;
+}
+
+a.nav-link.active:hover {
+  border: 1px #fff !important;
+}
+
+.card-body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.loginInput, .registerInput {
   display: block;
   margin: auto;
-  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  width: 50%;
+  width: 70%;
 }
+
 
 .loginContainer{
   background-color: #144552ac;
-  margin-top: 15%;
+  margin-top: 10%;
   border-radius: 10px;
   height: auto;
-  padding-bottom: 10px;
+  padding: 15px;
   font-family: 'Raleway', sans-serif;
 }
 
-.loginTitle {
-  padding-top: 5%;
-  font-family: 'Raleway', sans-serif;
-  color: aliceblue;
+input {
+  font-size: small;
 }
 
-#loginBtn {
+#loginBtn, #registerBtn {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
   margin-top: 20px;
-  background-color: #9aa86c;
+  background-color: #144552ac;
 }
 
-#loginBtn:hover {
-  background-color: #9aa86cbb;
+#loginBtn:hover, #registerBtn:hover {
+ border: 1px solid black;
+ box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+label {
+  padding-top: 10px;
 }
