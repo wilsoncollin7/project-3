@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+mongoose.promise = Promise;
 
 const trailSchema = new Schema({ 
   name: {

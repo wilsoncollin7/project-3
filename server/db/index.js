@@ -2,6 +2,7 @@
 
 const mongoose = require('mongooge');
 mongoose.Promise = global.Promise;
+const db = require('../models');
 
 // need to setup Mongo .env stuff, follow collateral directions
 mongoose.connect(
@@ -13,7 +14,5 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
-
-// need to add err message to notify when connection isn't working
 
 module.exports = db;

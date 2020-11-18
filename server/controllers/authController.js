@@ -1,3 +1,5 @@
+const db = require('../models');
+
 module.exports = (passport, db) => {
   return {
     register: (req, res) => {
