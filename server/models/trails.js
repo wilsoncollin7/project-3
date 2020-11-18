@@ -11,10 +11,6 @@ const trailSchema = new Schema({
   location: {
     type: String,
     required: 'Enter a location for the trail'
-  },
-  difficulty: {
-    type: Number,
-    required: 'Enter a difficulty from 1-5'
   }
 });
 
