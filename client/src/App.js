@@ -17,10 +17,18 @@ function App() {
         <BootstrapNavbar />
         <Background />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" >
+            <Home />
+          </Route>
+          <Route exact path="/home" >
+            <Home />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
         </Switch>
       </div>
     </Router>
