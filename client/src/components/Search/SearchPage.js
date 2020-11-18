@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
-import SearchButton from "./SearchButton";
 import TrailList from './SearchList';
 
 
@@ -34,7 +33,6 @@ const SearchPage = (props) => {
        value={input} 
        onChange={updateInput}
       />
-      <SearchButton />
       <TrailList trailList={trailList}/>
     </>
    );

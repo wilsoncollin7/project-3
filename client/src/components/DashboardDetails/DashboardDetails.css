@@ -10,30 +10,34 @@
   text-align: center;
 }
 
-.userCard {
-  
-}
 
 .nav-item {
-  background-color: #90be6dc2;
+  background-color: #9aa86cbb;
   border-radius: 2px;
   color: #144552fc !important;
   font-family: 'Raleway', sans-serif;
-  
 }
 
 #nav-pills, .nav-link.active{
   background: #fff !important;
-  font-weight: bold;
+  color: #144552fc !important;
+  font-weight: 600;
   border-radius: 2px;
 }
 
 a {
-  color: aliceblue;
+  color: #144552fc;
 }
 
-a:hover {
-  border-radius: 2px;
-  border: 1px #144552ac;
+a.nav-link:hover {
   color: aliceblue;
+  text-decoration: none !important;
+}
+
+a.nav-link.active:hover {
+  border: 1px #fff !important;
+}
+
+.card-body {
+  font-family: 'Raleway', sans-serif;
 }
