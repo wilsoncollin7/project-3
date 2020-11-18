@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// context API
+import UserContext from "./utils/UserContext";
 // styling
 import './App.css';
 // components
@@ -11,17 +13,27 @@ import Dashboard from "./pages/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  // setting user state to be passed as context 
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  });
+
   return (
     <Router>
       <div className="app">
-        <BootstrapNavbar />
-        <Background />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
+        <UserContext.Provider value={{ user, setUser }}>
+          <BootstrapNavbar />
+          <Background />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </UserContext.Provider>
       </div>
     </Router>
   );
