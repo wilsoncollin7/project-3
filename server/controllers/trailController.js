@@ -1,30 +1,32 @@
 const db = require('../models');
-const ObjectId = require('mongoose').Types.ObjectId;
+// const ObjectId = require('mongoose').Types.ObjectId;
 
-module.exports = function (db) {
-  return {
+module.exports = {
     // Get all trails
-    getTrails: function (req, res) {
-      db.Trail.findAll({}).then(function (dbTrail) {
-        res.json(dbTrail);
-      });
+    findAll: function(req, res) {
+      db.Trails
+        .find(req.query)
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
-    getUsersTrails: function (req, res) {
-      db.Trail.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbTrail) {
-        res.json(dbTrail);
-      });
+    updateOne: function(req, res) {
+      db.Trails
+        .findOneAndUpdate({ _id: req.params.id }, req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
-    // Create a new trail
-    createTrail: function (req, res) {
-      db.Trail.create(req.body).then(function (dbTrail) {
-        res.json(dbTrail);
-      });
+    create: function(req, res) {
+      db.Trails
+        .create(req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
-    // Delete an trail
-    deleteTrail: function (req, res) {
-      db.Trail.destroy({ where: { id: req.params.id } }).then(function (dbTrail) {
-        res.json(dbTrail);
-      });
+    remove: function(req, res) {
+      db.Trails
+        .findById({ _id: req.params.id })
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     }
-  }
 };

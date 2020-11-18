@@ -17,7 +17,8 @@ let userSeed = [
       },
     password: {
       type: String,
-      required: true, minlength: 8
+      required: true, 
+      minlength: 8
       }
   }
 ];
@@ -34,4 +35,5 @@ db.UserInfo.deleteMany({})
   });
 
 const User = mongoose.model('User', userSeed);
+
 module.exports = User;
