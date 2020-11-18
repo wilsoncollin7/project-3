@@ -22,8 +22,6 @@ let userSeed = [
   }
 ];
 
-// need to make a userinfo db?
-
 db.UserInfo.deleteMany({})
   .then(() => db.UserInfo.collection.insertMany(userSeed))
   .then(data => {
