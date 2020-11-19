@@ -1,11 +1,11 @@
 import React from 'react';
 // components
-import PageInfo from "../components/PageInfo/PageInfo"
+import StartPage from "../components/PageInfo/StartPage"
 
 function Home() {
   return (
     <div>
-      <PageInfo />
+      <StartPage />
     </div>
   )
 }

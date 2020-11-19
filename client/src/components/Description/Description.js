@@ -6,12 +6,10 @@ import Image from "./DescriptionImage"
 function Description() {
 
   return (
-    <div>
-      <body className="descriptionContainer">
-        <p><Image className="descriptionImage"></Image>
-          This is where the trail info will go
-        </p>
-      </body>
+    <div className="descriptionContainer">
+      <p><Image className="descriptionImage"></Image>
+        This is where the trail info will go
+      </p>
     </div>
   )
 }
