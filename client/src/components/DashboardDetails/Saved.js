@@ -10,19 +10,32 @@ function Saved() {
   // load all saved trails and store them with setSavedTrails
   useEffect(() => {
     loadSavedTrails()
-  }, [])
+  })
 
   // loads all the saved trails and sets them to savedTrails
   function loadSavedTrails() {
     API.getSavedTrails()
       .then(res => 
-        setSavedTrails(res.data)
+        filterTrails(res.data)
         )
       .catch(err => console.log(err));
   };
 
+  // filters whether trail is saved or visited
+  function filterTrails(data) {
+    let filertedTrails = []
+    data.map(item => {
+      if (!item.isVisited) {
+        filertedTrails.push(item)
+      }
+      return true;
+    })
+    setSavedTrails(filertedTrails);
+  }
+
   // deletes a saved trail based off an id and reloads the saved trails
   function deleteSavedTrail(id) {
+    console.log(id)
     API.deleteSavedTrails(id)
       .then(res => loadSavedTrails())
       .catch(err => console.log(err));
@@ -33,17 +46,17 @@ function Saved() {
       <Table striped bordered hover>
         <tbody>
           {savedTrails.map(item => (
-            <tr>
-              <td>
+            <tr key={item._id}>
+              <td className="imageTd">
                 <img 
-                  className="descriptionImage" 
+                  className="dashboardImage" 
                   src={item.image} 
                   alt={item.name}>
                 </img>
               </td>
               <td>{item.name}</td>
-              <td>{item.description}</td>
-              <button onClick={() => deleteSavedTrail(item._id)}>remove</button>
+              <td>{item.location}</td>
+              <button className="btn btn-secondary removeBtn" onClick={() => deleteSavedTrail(item._id)}>Remove</button>
             </tr>
           ))}
         </tbody>
