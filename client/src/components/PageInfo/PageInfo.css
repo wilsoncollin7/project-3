@@ -9,6 +9,11 @@
   padding: 2%;
   background-color: rgba(182, 182, 182, 0.527);
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 };
 
 .searchArea {
@@ -17,4 +22,23 @@
   border:"none"; 
   padding:"0.5rem";
   padding: 1%;
+  font-weight: 600;
 };
+
+select {
+  margin-top: 15px;
+  margin-left: 33%;
+  margin-right: 33%;
+}
+
+.stateSearch {
+  width: 40%;
+  display: flex;
+  align-content: center;
+  padding-top: 10px;
+}
+
+#searchBtn:hover {
+  border: 1px solid black;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+ }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // components
-import "../PageInfo/PageInfo.css";
+import "./PageInfo.css";
 
 class StateDropdown extends Component {
   constructor(props) {
@@ -68,7 +68,8 @@ class StateDropdown extends Component {
   render() {
     const {usStates} = this.state;
     return (
-      <select onChange={this.handleChange}>
+      
+      <select style={{borderRadius:"5px"}} onChange={this.handleChange}>
          {usStates.map(usState => {
            return (
              <option value={usState}> {usState} </option>
