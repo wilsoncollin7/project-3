@@ -29,7 +29,7 @@ class StartPage extends Component {
 
     const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
-    console.log(this.state);
+    // console.log(this.state);
 
     axios.get(queryUrl).then((res) => {
       
@@ -47,7 +47,7 @@ class StartPage extends Component {
   handleOnChange (e) {
     e.preventDefault();
     this.setState({ startSearch: e.target.value }, () => {
-      console.log(e.target.value);
+      // console.log(e.target.value);
     })
 
   }
