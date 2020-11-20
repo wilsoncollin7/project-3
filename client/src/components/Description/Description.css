@@ -22,6 +22,12 @@
   margin-right: 50px;
 }
 
+.descriptionTitle {
+  font-family: Impact, Charcoal, sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+}
+
 .natParksButton {
   height: "20px";
   width: "70px";

@@ -19,7 +19,7 @@ class PageInfo extends Component {
   }
 
   // componentDidMount() {
-  //   console.log(this.props.parksDescription.images[0].url)
+  //   console.log(this.props.parksDescription.fullName)
   // };
 
   searchChange(e) {
@@ -49,7 +49,7 @@ class PageInfo extends Component {
           <StateDropdown className="searchbar" />
         </form>
         <Container />
-        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} />
+        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
         <Map />
       </div>
     )

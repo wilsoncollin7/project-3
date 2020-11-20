@@ -12,7 +12,8 @@ class StartPage extends Component {
       showStart: false,
       startSearch: "",
       parksDescription: null,
-      parksImage: null
+      parksImage: null,
+      parksTitle: null
     }]}
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 
@@ -32,10 +33,11 @@ class StartPage extends Component {
 
     axios.get(queryUrl).then((res) => {
       
-      // console.log(res.data.data[0].images[0].url);
+      // console.log(res.data.data[0].fullName);
 
       this.setState({parksDescription: res.data.data[0]})
       this.setState({parksImage: res.data.data[0].images[0].url})
+      this.setState({parksTitle: res.data.data[0].fullName})
 
       return ;
 
@@ -51,9 +53,9 @@ class StartPage extends Component {
   }
 
   render () {
-    if(this.state.showStart && this.state.parksDescription && this.state.parksImage) {
+    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
-        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} />
+        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} />
       
       )
     }
