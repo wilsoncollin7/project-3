@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "./Description.css"
 import NatParksButton from "./NatParksButton"
 import Image from "./DescriptionImage"
 
 //this is the description of the trail/park
-function Description() {
+class Description extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+    
+  }
 
-  return (
-    <div className="descriptionContainer">
-      <p><Image className="descriptionImage"></Image>
-        This is where the trail info will go
-      </p>
-      <NatParksButton />
-    </div>
-  )
+  // componentDidMount() {
+  //   console.log(this.props.parksImages)
+  // }
+
+  render () {
+    return (
+      <div className="descriptionContainer">
+        <p><Image className="descriptionImage" parksImages={this.props.parksImages}></Image>
+          {this.props.parksDescription}
+        </p>
+        <NatParksButton />
+      </div>
+    )
+  }
 }
 
 export default Description;

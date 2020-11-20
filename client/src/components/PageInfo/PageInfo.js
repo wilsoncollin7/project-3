@@ -18,6 +18,10 @@ class PageInfo extends Component {
     this.SearchButton = this.SearchButton.bind(this);
   }
 
+  // componentDidMount() {
+  //   console.log(this.props.parksDescription.images[0].url)
+  // };
+
   searchChange(e) {
     this.setState({ search: e.target.value }, () => {
       console.log(e.target.value)
@@ -45,7 +49,7 @@ class PageInfo extends Component {
           <StateDropdown className="searchbar" />
         </form>
         <Container />
-        <Description />
+        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} />
         <Map />
       </div>
     )
