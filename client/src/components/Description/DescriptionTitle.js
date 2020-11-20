@@ -9,9 +9,9 @@ class DescriptionTitle extends Component {
     
   }
 
-  componentDidMount() {
-    console.log(this.props.parksTitle)
-  }
+  // componentDidMount() {
+  //   console.log(this.props.parksTitle)
+  // }
 
   render() {
     return (
