@@ -6,7 +6,8 @@ class StateDropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usStates: ["AL : Alabama",
+      usStates: [
+        "AL: Alabama",
         "AK : Alaska",
         "AZ : Arizona",
         "AR : Arkansas",
@@ -71,7 +72,7 @@ class StateDropdown extends Component {
       <select onChange={this.handleChange}>
          {usStates.map(usState => {
            return (
-             <option value={usState}> {usState} </option>
+             <option key={usState} value={usState}> {usState} </option>
            )
          })}
     </select>

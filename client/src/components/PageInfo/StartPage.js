@@ -24,6 +24,7 @@ class StartPage extends Component {
     if(this.state.showStart) {
       return (
         <PageInfo />
+      
       )
     }
     return (
