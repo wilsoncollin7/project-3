@@ -1,12 +1,24 @@
-import React from 'react';
-import logo from './placeholder.png'; 
+import React, { Component } from 'react';
 import "./Description.css"
 
-console.log(logo); 
 
-function Image() {
+
+class Image extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {ParksImage: [{
+      parksImage: null
+    }]}
+  }
+
+  // componentDidMount() {
+  //   console.log(this.props.parksImages); 
+  // }
+
   // Import result is the URL of your image
-  return <img src={logo} className="descriptionImage" alt="Logo" />;
+  render () {
+    return <img src={this.props.parksImages} className="descriptionImage" alt="ParkPic" />;
+  }
 }
 
 export default Image;
