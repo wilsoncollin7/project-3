@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-
 .nav-item {
   background-color: #9aa86cbb;
   border-radius: 2px;
@@ -40,4 +39,21 @@ a.nav-link.active:hover {
 
 .card-body {
   font-family: 'Raleway', sans-serif;
+}
+
+.removeBtn {
+  margin-top: 5%;
+}
+
+.imageTd {
+  padding: 0 !important;
+}
+
+.dashboardImage {
+  border-radius: 10px;
+  padding: 0;
+  margin: 3%;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  height: 5%;
 }

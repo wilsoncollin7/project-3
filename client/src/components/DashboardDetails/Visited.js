@@ -10,16 +10,28 @@ function Visited() {
   // load all visited trails and store them with setVisitedTrails
   useEffect(() => {
     loadVisitedTrails()
-  }, [])
+  })
 
   // loads all the visited trails and sets them to visitedTrails
   function loadVisitedTrails() {
     API.getVisitedTrails()
       .then(res => 
-        setVisitedTrails(res.data)
+        filterTrails(res.data)
         )
       .catch(err => console.log(err));
   };
+
+  // filters whether trail is saved or visited
+  function filterTrails(data) {
+    let filertedTrails = []
+    data.map(item => {
+      if (item.isVisited) {
+        filertedTrails.push(item)
+      }
+      return true;
+    })
+    setVisitedTrails(filertedTrails);
+  }
 
   // deletes a visited trail based off an id and reloads the visited trails
   function deleteVisitedTrail(id) {
@@ -33,17 +45,17 @@ function Visited() {
       <Table striped bordered hover>
         <tbody>
           {visitedTrails.map(item => (
-            <tr>
-              <td>
+            <tr key={item._id}>
+              <td className="imageTd">
                 <img 
-                  className="descriptionImage" 
+                  className="dashboardImage" 
                   src={item.image} 
                   alt={item.name}>
                 </img>
               </td>
               <td>{item.name}</td>
-              <td>{item.description}</td>
-              <button onClick={() => deleteVisitedTrail(item._id)}>remove</button>
+              <td>{item.location}</td>
+              <button className="btn btn-secondary removeBtn" onClick={() => deleteVisitedTrail(item._id)}>remove</button>
             </tr>
           ))}
         </tbody>

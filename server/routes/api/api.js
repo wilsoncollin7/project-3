@@ -13,7 +13,6 @@ module.exports = router;
 
 // const axios = require("axios");
 
-
 // function ({ searchbar }) {
 //    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchbar}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
