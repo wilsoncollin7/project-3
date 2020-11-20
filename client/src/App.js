@@ -24,24 +24,6 @@ function App() {
   return (
     <Router>
       <div className="app">
-<<<<<<< HEAD
-        <BootstrapNavbar />
-        <Background />
-        <Switch>
-          <Route exact path="/" >
-            <Home />
-          </Route>
-          <Route exact path="/home" >
-            <Home />
-          </Route>
-          <Route exact path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
-=======
         <UserContext.Provider value={{ user, setUser }}>
           <BootstrapNavbar />
           <Background />
@@ -52,7 +34,6 @@ function App() {
             <Route exact path="/login" component={Login} />
           </Switch>
         </UserContext.Provider>
->>>>>>> e273d800fd2f6ccdf1ddd85ebbc100fdc0985306
       </div>
     </Router>
   );

@@ -11,6 +11,14 @@ const trailSchema = new Schema({
   location: {
     type: String,
     required: 'Enter a location for the trail'
+  },
+  isVisited: {
+    type: Boolean,
+    default: false
+  },
+  image: {
+    type: String,
+    default: "http://placehold.it/200x200"
   }
 });
 
