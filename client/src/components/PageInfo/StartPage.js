@@ -57,6 +57,8 @@ class StartPage extends Component {
         <input onChange={this.handleOnChange} style= {{width: "300px", background:"#F2F1F9", border:"none", padding: "1%"}} type="text" placeholder="Where we going?" value={this.state.search}></input>
         <button className="btn btn-success" onClick={this.handleSubmitSearch}>Go Out Yonder!</button>
         <StateDropdown className="searchbar" />
+        <button className="btn" id="searchBtn" style= {{border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} onClick={this.handleSubmitSearch}>Go Out Yonder!</button>
+        
       </form>
     </div>
     )
