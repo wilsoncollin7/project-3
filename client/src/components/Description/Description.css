@@ -21,3 +21,11 @@
   width: 100px;
   margin-right: 50px;
 }
+
+.natParksButton {
+  height: "20px";
+  width: "70px";
+  text-align: "center";
+  font-size: 10px;
+  font-weight: bold;
+}
