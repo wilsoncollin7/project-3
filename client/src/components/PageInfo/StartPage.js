@@ -13,7 +13,9 @@ class StartPage extends Component {
       startSearch: "",
       parksDescription: null,
       parksImage: null,
-      parksTitle: null
+      parksTitle: null,
+      lat: null,
+      lng: null
     }]}
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 
@@ -38,6 +40,8 @@ class StartPage extends Component {
       this.setState({parksDescription: res.data.data[0]})
       this.setState({parksImage: res.data.data[0].images[0].url})
       this.setState({parksTitle: res.data.data[0].fullName})
+      this.setState({lat: res.data.data[0].latitude})
+      this.setState({lng: res.data.data[0].longitude})
 
       return ;
 
@@ -55,7 +59,7 @@ class StartPage extends Component {
   render () {
     if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
-        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} />
+        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} lat={this.state.lat} lng={this.state.lng}/>
       
       )
     }
