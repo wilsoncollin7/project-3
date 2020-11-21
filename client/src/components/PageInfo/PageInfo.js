@@ -16,7 +16,9 @@ class PageInfo extends Component {
       search: "",
       newparksDescription: null,
       newparksImage: null,
-      newparksTitle: null
+      newparksTitle: null,
+      lat: null,
+      lng: null
     }]}
 
     this.searchChange = this.searchChange.bind(this);
@@ -51,10 +53,13 @@ class PageInfo extends Component {
     axios.get(queryUrl).then((res) => {
       
       // console.log(res.data.data[0].description);
+      // console.log(res.data)
 
       this.setState({newparksDescription: res.data.data[0].description})
       this.setState({newparksImage: res.data.data[0].images[0].url})
       this.setState({newparksTitle: res.data.data[0].fullName})
+      this.setState({lat: res.data.data[0].latitude})
+      this.setState({lng: res.data.data[0].longitude})
 
       // console.log(this.state.newparksImage)
     })
@@ -72,7 +77,7 @@ class PageInfo extends Component {
           </form>
           <Container />
           <Description parksDescription={this.state.newparksDescription} parksImages={this.state.newparksImage} parksTitle={this.state.newparksTitle} />
-          <Map />
+          <Map lat={this.state.lat} lng={this.state.lng}/>
         </div>
       )
     }
@@ -85,7 +90,7 @@ class PageInfo extends Component {
           </form>
           <Container />
           <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
-          <Map />
+          <Map lat={this.props.lat} lng={this.props.lng}/>
         </div>
       )
   }
