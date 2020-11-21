@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import API from "../../utils/API";
 // styling
 import "./DashboardDetails.css";
@@ -7,31 +7,37 @@ import { Card, Table } from 'react-bootstrap';
 function Visited() {
   const [visitedTrails, setVisitedTrails] = useState([])
 
-  // load all visited trails and store them with setVisitedTrails
-  useEffect(() => {
-    loadVisitedTrails()
-  })
+  // filters whether trail is saved or visited
+  const filterTrails = useCallback(
+    (data) => {
+      let filertedTrails = []
+      data.map(item => {
+        if (item.isVisited) {
+          filertedTrails.push(item)
+        }
+        return true;
+      })
+      setVisitedTrails(filertedTrails);
+    },
+    []
+  );
 
-  // loads all the visited trails and sets them to visitedTrails
-  function loadVisitedTrails() {
-    API.getVisitedTrails()
+  // loads all the visited trails and passes them to filter function
+  const loadVisitedTrails = useCallback(
+    () => {
+      API.getVisitedTrails()
       .then(res => 
         filterTrails(res.data)
         )
       .catch(err => console.log(err));
-  };
+    },
+    [filterTrails]
+  );
 
-  // filters whether trail is saved or visited
-  function filterTrails(data) {
-    let filertedTrails = []
-    data.map(item => {
-      if (item.isVisited) {
-        filertedTrails.push(item)
-      }
-      return true;
-    })
-    setVisitedTrails(filertedTrails);
-  }
+  // load all visited trails
+  useEffect(() => {
+    loadVisitedTrails()
+  }, [loadVisitedTrails])
 
   // deletes a visited trail based off an id and reloads the visited trails
   function deleteVisitedTrail(id) {
@@ -55,7 +61,9 @@ function Visited() {
               </td>
               <td>{item.name}</td>
               <td>{item.location}</td>
-              <button className="btn btn-secondary removeBtn" onClick={() => deleteVisitedTrail(item._id)}>remove</button>
+              <td>
+                <button className="btn btn-secondary removeBtn" onClick={() => deleteVisitedTrail(item._id)}>remove</button>
+              </td>
             </tr>
           ))}
         </tbody>
