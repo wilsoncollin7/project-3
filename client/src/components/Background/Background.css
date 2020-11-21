@@ -4,10 +4,10 @@
   right: 0;
   left: 0;
   z-index: -1;
-  background-image: url(./backgroundImage.png);
-  height: 100%;
+  background-image: url(./backgroundImage2.png);
+  height: 90%;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 98%;
-  margin-top: 7%;
+  margin-top: 75px;
 }

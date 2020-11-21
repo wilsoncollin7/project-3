@@ -4,10 +4,14 @@
 
 .savedCard {
   text-align: center;
+  overflow-y: auto;
+    max-height: 500px;
 }
 
 .visitedCard {
   text-align: center;
+  overflow-y: auto;
+    max-height: 500px;
 }
 
 .nav-item {
