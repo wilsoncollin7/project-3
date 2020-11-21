@@ -14,7 +14,7 @@ class Description extends Component {
   }
 
   // componentDidMount() {
-  //   console.log(this.props.parksTitle)
+  //   console.log(this.props.allData)
   // }
 
   render () {
@@ -24,7 +24,7 @@ class Description extends Component {
         <p><Image className="descriptionImage" parksImages={this.props.parksImages}></Image>
           {this.props.parksDescription}
         </p>
-        <NatParksButton />
+        <NatParksButton {...this.props.allData}/>
       </div>
     )
   }

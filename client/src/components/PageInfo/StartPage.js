@@ -55,7 +55,7 @@ class StartPage extends Component {
   render () {
     if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
-        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} />
+        <PageInfo {...this.props} parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} />
       
       )
     }

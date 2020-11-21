@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AdditionalDescription from "./AdditionalDescription"
 import "./Description.css";
 
-function NatParksButton () {
+class NatParksButton extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {NatParksButton: [{
+      viewAdditional: false
+    }]}
 
-  function natParksLookup(e) {
-    console.log("this will make an api call to the national parks")
+    this.natParksLookup = this.natParksLookup.bind(this)
+
   };
 
-  return (
-    <button onClick={natParksLookup} className="natParksButton">Learn more</button>
-  );
+  natParksLookup(e) {
+    e.preventDefault();
+    // const searchName = (this.state.search.split(' ').join('%20'));
 
-};
+    // const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
-export default NatParksButton
+
+    // console.log(this.props[0].addresses[0])
+
+    // const learnMore = this.props
+    
+  };
+
+  render () {
+    return (
+      <div>
+        <button onClick={(this.natParksLookup)} className="natParksButton">Learn more</button>
+      </div>
+    );
+  
+  }
+}
+
+
+export default NatParksButton;

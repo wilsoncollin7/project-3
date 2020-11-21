@@ -16,7 +16,8 @@ class PageInfo extends Component {
       search: "",
       newparksDescription: null,
       newparksImage: null,
-      newparksTitle: null
+      newparksTitle: null,
+      allData: []
     }]}
 
     this.searchChange = this.searchChange.bind(this);
@@ -55,8 +56,9 @@ class PageInfo extends Component {
       this.setState({newparksDescription: res.data.data[0].description})
       this.setState({newparksImage: res.data.data[0].images[0].url})
       this.setState({newparksTitle: res.data.data[0].fullName})
+      this.setState({allData: res.data.data})
 
-      // console.log(this.state.newparksImage)
+      // console.log(this.state.allData)
     })
 
   }
@@ -71,7 +73,7 @@ class PageInfo extends Component {
             <StateDropdown className="searchbar" />
           </form>
           <Container />
-          <Description parksDescription={this.state.newparksDescription} parksImages={this.state.newparksImage} parksTitle={this.state.newparksTitle} />
+          <Description {...this.props} parksDescription={this.state.newparksDescription} parksImages={this.state.newparksImage} parksTitle={this.state.newparksTitle} allData={this.state.allData} />
           <Map />
         </div>
       )
@@ -84,7 +86,7 @@ class PageInfo extends Component {
             <StateDropdown className="searchbar" />
           </form>
           <Container />
-          <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
+          <Description {...this.props.allData} parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
           <Map />
         </div>
       )
