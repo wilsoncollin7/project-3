@@ -80,3 +80,7 @@ input {
 label {
   padding-top: 10px;
 }
+
+.input-group-text {
+  background-color: #1445523a;
+}
