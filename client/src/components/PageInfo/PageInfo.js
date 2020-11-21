@@ -82,7 +82,7 @@ class PageInfo extends Component {
       <div className="searchResultsContainer">
         {/* <Container /> */}
         <div className="searchResultsBtn">
-        <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style= {{marginLeft: "auto", justifyContent: 'right', border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} block>
+        <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style= {{marginLeft: "auto", justifyContent: 'right', border:"none", width: "20%", background: "#144552ac", marginRight:"10%"}} block>
          Back to Search Page
         </Button>
         </div>
