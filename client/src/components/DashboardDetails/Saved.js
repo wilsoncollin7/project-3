@@ -10,7 +10,7 @@ function Saved() {
   // load all saved trails and store them with setSavedTrails
   useEffect(() => {
     loadSavedTrails()
-  })
+  }, [])
 
   // loads all the saved trails and sets them to savedTrails
   function loadSavedTrails() {
@@ -56,7 +56,9 @@ function Saved() {
               </td>
               <td>{item.name}</td>
               <td>{item.location}</td>
-              <button className="btn btn-secondary removeBtn" onClick={() => deleteSavedTrail(item._id)}>Remove</button>
+              <td>
+                <button className="btn btn-secondary removeBtn" onClick={() => deleteSavedTrail(item._id)}>Remove</button>
+              </td>
             </tr>
           ))}
         </tbody>

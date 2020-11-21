@@ -4,7 +4,7 @@ import Container from "../Container/Container";
 // import SearchPage from "../Search/SearchPage";
 import Description from "../Description/Description";
 import Map from "../Map/Map";
-import StateDropdown from "./StateDropdown"
+import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 
 class PageInfo extends Component {

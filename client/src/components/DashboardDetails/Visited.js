@@ -10,7 +10,7 @@ function Visited() {
   // load all visited trails and store them with setVisitedTrails
   useEffect(() => {
     loadVisitedTrails()
-  })
+  }, [])
 
   // loads all the visited trails and sets them to visitedTrails
   function loadVisitedTrails() {
@@ -55,7 +55,9 @@ function Visited() {
               </td>
               <td>{item.name}</td>
               <td>{item.location}</td>
-              <button className="btn btn-secondary removeBtn" onClick={() => deleteVisitedTrail(item._id)}>remove</button>
+              <td>
+                <button className="btn btn-secondary removeBtn" onClick={() => deleteVisitedTrail(item._id)}>remove</button>
+              </td>
             </tr>
           ))}
         </tbody>
