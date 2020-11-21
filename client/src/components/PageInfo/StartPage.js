@@ -2,34 +2,67 @@ import React, { Component } from 'react';
 // components
 import PageInfo from "./PageInfo"
 import StateDropdown from "./StateDropdown"
-import "./PageInfo.css";
-
+import "../PageInfo/PageInfo.css";
+import axios from "axios";
 
 class StartPage extends Component {
   constructor(props) {
     super(props)
     this.state = {StartPage: [{
       showStart: false,
-      startSearch: ""
+      startSearch: "",
+      parksDescription: null,
+      parksImage: null,
+      parksTitle: null
     }]}
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+
   }
 
   handleSubmitSearch(e) {
     e.preventDefault();
     this.setState({showStart: true})
+
+    const searchName = (this.state.startSearch.split(' ').join('%20'));
+
+    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
+
+    // console.log(this.state);
+
+    axios.get(queryUrl).then((res) => {
+      
+      // console.log(res.data.data[0].fullName);
+
+      this.setState({parksDescription: res.data.data[0]})
+      this.setState({parksImage: res.data.data[0].images[0].url})
+      this.setState({parksTitle: res.data.data[0].fullName})
+
+      return ;
+
+    })
+  };
+
+  handleOnChange (e) {
+    e.preventDefault();
+    this.setState({ startSearch: e.target.value }, () => {
+      // console.log(e.target.value);
+    })
+
   }
 
   render () {
-    if(this.state.showStart) {
+    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
-        <PageInfo />
+        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} />
+      
       )
     }
     return (
       <div>
       <form className="searchBar">
-        <input style=  {{borderRadius:"5px", width: "40%", background:"#F2F1F9", border:"none", padding: "8px", fontWeight:"600", marginRight:"2%"}} type="text" placeholder="Where we going?" value={this.state.search}></input>
+        <input onChange={this.handleOnChange} style= {{width: "300px", background:"#F2F1F9", border:"none", padding: "1%", marginRight:"2%"}} type="text" placeholder="Where we going?" value={this.state.search}></input>
         <StateDropdown className="searchbar" />
         <button className="btn" id="searchBtn" style= {{border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} onClick={this.handleSubmitSearch}>Go Out Yonder!</button>
         

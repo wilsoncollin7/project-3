@@ -17,9 +17,16 @@
   padding: 1%;
   background-color: rgba(182, 182, 182, 0.527);
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   margin-right: 50px;
+}
+
+.descriptionTitle {
+  font-family: Impact, Charcoal, sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  
 }
 
 .natParksButton {
