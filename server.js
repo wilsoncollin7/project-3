@@ -5,6 +5,7 @@ const routes = require("./server/routes");
 require("dotenv/config");
 const passport = require("./server/passport/index");
 const app = express();
+const MongoStore = require('connect-mongo')(session);
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
