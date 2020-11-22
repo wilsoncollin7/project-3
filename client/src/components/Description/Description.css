@@ -30,9 +30,23 @@
 }
 
 .natParksButton {
-  height: "20px";
-  width: "70px";
+  border: none;
+  width: auto;
+  background: #c1d387de;
+  justify-content: right;
   text-align: "center";
-  font-size: 10px;
-  font-weight: bold;
+  border-radius: 4px;
+  font-weight: 400;
+  color: #144552ac;
+  font-size: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
 }
+
+.natParksButtonDiv {
+  display: flex;
+  justify-content: right;
+}
+
+.natParksButton:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.658);
+ }
