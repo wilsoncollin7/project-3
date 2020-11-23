@@ -9,7 +9,7 @@ function NatParksButton () {
 
   return (
     <div className="natParksButtonDiv">
-    <button onClick={natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}} block>Learn more</button>
+    <button onClick={natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
     </div>
   );
   

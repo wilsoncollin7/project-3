@@ -1,0 +1,12 @@
+.saveTrailButton {
+  border: none;
+  width: auto;
+  background: #c1d387de;
+  justify-content: right;
+  text-align: "center";
+  border-radius: 4px;
+  font-weight: 400;
+  color: #144552ac;
+  font-size: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}

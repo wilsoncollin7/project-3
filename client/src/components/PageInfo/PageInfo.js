@@ -55,7 +55,7 @@ class PageInfo extends Component {
 
     axios.get(queryUrl).then((res) => {
 
-      // console.log(res.data.data[0].description);
+      console.log(res.data.data[0]);
 
       this.setState({ newparksDescription: res.data.data[0].description })
       this.setState({ newparksImage: res.data.data[0].images[0].url })
@@ -87,8 +87,13 @@ class PageInfo extends Component {
             Back to Search Page
         </Button>
         </div>
-        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
-        {/* <Map /> */}
+        <Description 
+          parksDescription={this.props.parksDescription.description} 
+          parksImages={this.props.parksDescription.images[0].url} 
+          parksTitle={this.props.parksDescription.fullName}
+          city={this.props.city}
+          state={this.props.state}
+        />
 
       </div>
     )
