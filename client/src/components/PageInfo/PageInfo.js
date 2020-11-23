@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 // components
-import Container from "../Container/Container";
 // import SearchPage from "../Search/SearchPage";
 import Description from "../Description/Description";
-import Map from "../Map/Map";
 import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 import axios from "axios";
@@ -82,13 +79,11 @@ class PageInfo extends Component {
       <div className="searchResultsContainer">
         {/* <Container /> */}
         <div className="searchResultsBtn">
-        <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style= {{marginLeft: "auto", justifyContent: 'right', border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} block>
+        <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style= {{justifyContent: 'right', border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} block>
          Back to Search Page
         </Button>
         </div>
-        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
-        {/* <Map /> */}
-        
+        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />        
       </div>
     )
   }

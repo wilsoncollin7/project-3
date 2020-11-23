@@ -37,7 +37,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "google-map-react": "^2.1.9",
     "if-env": "^1.0.4",
     "mongoose": "^5.10.13",
     "passport": "^0.4.1",
