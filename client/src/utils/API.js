@@ -20,11 +20,11 @@ export default {
   },
   // saves visited trail
   saveVisitedTrails: function(trailData) {
-    return axios.post("/api/trails/" + trailData);
+    return axios.post("/api/trails", trailData);
   },
   // saves saved trails
   saveSavedTrails: function(trailData) {
-    return axios.post("/api/trails" + trailData);
+    return axios.post("/api/trails", trailData);
   },
   getUser: function() {
     return axios.get("/api/user");

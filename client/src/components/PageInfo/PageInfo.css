@@ -38,7 +38,21 @@ select {
   padding-top: 10px;
 }
 
-#searchBtn:hover {
+#searchBtn:hover, #returnHomeBtn:hover {
   border: 1px solid black;
-  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.658);
+ }
+
+ #returnHomeBtn {
+  box-shadow: 0 5px 15px rgba(0,0,0,.5)
+ }
+
+ .searchResultsBtn {
+   margin-top: 100px;
+   display: flex;
+   justify-content: right;
+ }
+
+ p {
+   display: flex;
  }
