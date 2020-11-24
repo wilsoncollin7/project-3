@@ -20,9 +20,10 @@ class NatParksButton extends Component {
     // const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
 
-    // console.log(this.props[0].addresses[0])
+    console.log(this.props[0].addresses[0])
 
     // const learnMore = this.props
+    this.setState({ viewForm: true });
     
   };
 
