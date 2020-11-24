@@ -15,15 +15,15 @@ class Description extends Component {
   }
 
   // componentDidMount() {
-  //   console.log(this.props.allData)
+  //   console.log(this.props)
   // }
 
   render () {
     return (
       <div className="descriptionContainer">
-        <DescriptionTitle parksTitle={this.props.parksTitle} />
-        <p><Image className="descriptionImage" parksImages={this.props.parksImages}></Image>
-          {this.props.parksDescription}
+        <DescriptionTitle parksTitle={this.props.parksDescription.fullName} />
+        <p><Image className="descriptionImage" parksImages={this.props.parksDescription.images[0].url}></Image>
+          {this.props.parksDescription.description}
         </p>
         <p>{this.props.city + ", " + this.props.state}</p>
         <SaveTrailButtons 
@@ -31,7 +31,7 @@ class Description extends Component {
           location={this.props.city + ", " + this.props.state}
           image={this.props.parksImages}
         />
-        <NatParksButton />
+        <NatParksButton parksDescription={this.props.parksDescription}/>
 
       </div>
     )

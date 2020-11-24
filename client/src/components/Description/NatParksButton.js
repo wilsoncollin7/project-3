@@ -11,26 +11,29 @@ class NatParksButton extends Component {
 
     this.natParksLookup = this.natParksLookup.bind(this)
 
+
   };
 
   natParksLookup(e) {
     e.preventDefault();
-    // const searchName = (this.state.search.split(' ').join('%20'));
-
-    // const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
 
-    console.log(this.props[0].addresses[0])
-
-    // const learnMore = this.props
-    this.setState({ viewForm: true });
+    this.setState({ viewAdditional: true });
     
   };
+  
 
   render () {
-    return (
-      <div className="natParksButtonDiv">
-        <button onClick={this.natParksLookup()} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
+    if (!this.state.viewAdditional) {
+      return (
+        <div className="natParksButtonDiv">
+          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
+        </div>
+      )
+    }
+    else return (
+      <div>
+        <AdditionalDescription parksDescription={this.props.parksDescription} />
       </div>
     )
   }
