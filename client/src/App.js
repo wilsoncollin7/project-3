@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 // context API
 import UserContext from "./utils/UserContext";
 import SearchContext from "./utils/SearchContext";
