@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AdditionalDescription from "./AdditionalDescription"
 import "./Description.css";
 
-function NatParksButton () {
+class NatParksButton extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {NatParksButton: [{
+      viewAdditional: false
+    }]}
 
-  function natParksLookup(e) {
-    console.log("this will make an api call to the national parks")
+    this.natParksLookup = this.natParksLookup.bind(this)
+
+
   };
 
-  return (
-    <div className="natParksButtonDiv">
-    <button onClick={natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
-    </div>
-  );
+  natParksLookup(e) {
+    e.preventDefault();
+
+
+    this.setState({ viewAdditional: true });
+    
+  };
   
 
+  render () {
+    if (!this.state.viewAdditional) {
+      return (
+        <div className="natParksButtonDiv">
+          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
+        </div>
+      )
+    }
+    else return (
+      <div>
+        <AdditionalDescription parksDescription={this.props.parksDescription} />
+      </div>
+    )
+  }
 };
+  
 
-export default NatParksButton
+
+export default NatParksButton;

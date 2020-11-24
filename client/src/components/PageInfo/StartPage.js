@@ -14,6 +14,7 @@ class StartPage extends Component {
       parksDescription: null,
       parksImage: null,
       parksTitle: null,
+      allData: null,
       lat: null,
       lng: null,
       city: null,
@@ -37,15 +38,18 @@ class StartPage extends Component {
 
     axios.get(queryUrl).then((res) => {
       
-      // console.log(res.data.data[0]);
 
       this.setState({parksDescription: res.data.data[0]})
       this.setState({parksImage: res.data.data[0].images[0].url})
       this.setState({parksTitle: res.data.data[0].fullName})
+      this.setState({allData: res.data.data[0]})
       this.setState({lat: res.data.data[0].latitude})
       this.setState({lng: res.data.data[0].longitude})
       this.setState({city: res.data.data[0].addresses[0].city})
       this.setState({state: res.data.data[0].addresses[0].stateCode})
+
+      // console.log(this.state.allData);
+
 
       return ;
 
@@ -61,7 +65,7 @@ class StartPage extends Component {
   }
 
   render () {
-    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
+    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle && this.state.allData) {
       return (
         <PageInfo 
           parksDescription={this.state.parksDescription} 

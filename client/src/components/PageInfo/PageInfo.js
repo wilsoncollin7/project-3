@@ -7,7 +7,6 @@ import Description from "../Description/Description";
 // import Map from "../Map/Map";
 import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
-import axios from "axios";
 import { Button } from "react-bootstrap";
 
 
@@ -20,16 +19,15 @@ class PageInfo extends Component {
         search: "",
         newparksDescription: null,
         newparksImage: null,
-        newparksTitle: null
+        newparksTitle: null,
       }]
     }
 
     this.searchChange = this.searchChange.bind(this);
-    this.SearchButton = this.SearchButton.bind(this);
   }
 
   // componentDidMount() {
-  //   console.log(this.props.newparksDescription.fullName)
+  //   console.log(this.props.parksDescription)
   // };
 
   searchChange(e) {
@@ -39,32 +37,6 @@ class PageInfo extends Component {
   };
 
 
-  // button function that when clicked renders the map and description
-  SearchButton(e) {
-    e.preventDefault();
-    if (this.state.search) {
-
-    } else {
-      console.log("hey this is undefined")
-    }
-    const searchName = (this.state.search.split(' ').join('%20'));
-
-    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
-
-    // console.log(queryUrl);
-
-    axios.get(queryUrl).then((res) => {
-
-      console.log(res.data.data[0]);
-
-      this.setState({ newparksDescription: res.data.data[0].description })
-      this.setState({ newparksImage: res.data.data[0].images[0].url })
-      this.setState({ newparksTitle: res.data.data[0].fullName })
-
-      // console.log(this.state.newparksImage)
-    })
-
-  }
 
   render() {
     if (this.state.search) {
@@ -88,9 +60,7 @@ class PageInfo extends Component {
         </Button>
         </div>
         <Description 
-          parksDescription={this.props.parksDescription.description} 
-          parksImages={this.props.parksDescription.images[0].url} 
-          parksTitle={this.props.parksDescription.fullName}
+          parksDescription={this.props.parksDescription} 
           city={this.props.city}
           state={this.props.state}
         />
