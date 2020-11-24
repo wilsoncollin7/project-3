@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // components
-import Container from "../Container/Container";
+// import Container from "../Container/Container";
 // import SearchPage from "../Search/SearchPage";
 import Description from "../Description/Description";
-import Map from "../Map/Map";
+// import Map from "../Map/Map";
 import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+
 
 
 class PageInfo extends Component {
@@ -54,7 +55,7 @@ class PageInfo extends Component {
 
     axios.get(queryUrl).then((res) => {
 
-      // console.log(res.data.data[0].description);
+      console.log(res.data.data[0]);
 
       this.setState({ newparksDescription: res.data.data[0].description })
       this.setState({ newparksImage: res.data.data[0].images[0].url })
@@ -80,15 +81,20 @@ class PageInfo extends Component {
     }
     return (
       <div className="searchResultsContainer">
-        {/* <Container /> */}
+        
         <div className="searchResultsBtn">
-        <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style= {{marginLeft: "auto", justifyContent: 'right', border:"none", width: "20%", background: "#144552ac", marginRight:"10%"}} block>
-         Back to Search Page
+          <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style={{ marginLeft: "auto", justifyContent: 'right', border: "none", width: "auto", background: "#144552ac", marginRight: "10%"}} block>
+            Back to Search Page
         </Button>
         </div>
-        <Description parksDescription={this.props.parksDescription.description} parksImages={this.props.parksDescription.images[0].url} parksTitle={this.props.parksDescription.fullName} />
-        {/* <Map /> */}
-        
+        <Description 
+          parksDescription={this.props.parksDescription.description} 
+          parksImages={this.props.parksDescription.images[0].url} 
+          parksTitle={this.props.parksDescription.fullName}
+          city={this.props.city}
+          state={this.props.state}
+        />
+
       </div>
     )
   }

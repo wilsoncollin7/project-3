@@ -29,13 +29,13 @@ class NatParksButton extends Component {
 
   render () {
     return (
-      <div>
-        <button onClick={(this.natParksLookup)} className="natParksButton">Learn more</button>
+      <div className="natParksButtonDiv">
+        <button onClick={this.natParksLookup()} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
       </div>
-    );
-  
+    )
   }
-}
+};
+  
 
 
 export default NatParksButton;

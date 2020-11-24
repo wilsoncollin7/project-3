@@ -36,11 +36,8 @@ mongoose.connect(process.env.MONGODB_URI,
     useCreateIndex: true,
     useFindAndModify: false
   },
-  () => {
-    console.log('Connected to DB!');
-    console.log(process.env.MONGODB_URI);
-   }
-); 
+  () => console.log('Connected to DB!')
+);
 
 // Start the API server 
 app.listen(PORT, function() {

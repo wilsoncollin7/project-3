@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./Description.css"
 import NatParksButton from "./NatParksButton"
+import SaveTrailButtons from "../SaveTrailButtons/SaveTrailButtons";
 import Image from "./DescriptionImage"
 import DescriptionTitle from './DescriptionTitle';
 
@@ -24,7 +25,14 @@ class Description extends Component {
         <p><Image className="descriptionImage" parksImages={this.props.parksImages}></Image>
           {this.props.parksDescription}
         </p>
-        <NatParksButton {...this.props.allData}/>
+        <p>{this.props.city + ", " + this.props.state}</p>
+        <SaveTrailButtons 
+          name={this.props.parksTitle}
+          location={this.props.city + ", " + this.props.state}
+          image={this.props.parksImages}
+        />
+        <NatParksButton />
+
       </div>
     )
   }

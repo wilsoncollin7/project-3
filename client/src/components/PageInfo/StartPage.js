@@ -15,7 +15,9 @@ class StartPage extends Component {
       parksImage: null,
       parksTitle: null,
       lat: null,
-      lng: null
+      lng: null,
+      city: null,
+      state: null
     }]}
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 
@@ -35,13 +37,15 @@ class StartPage extends Component {
 
     axios.get(queryUrl).then((res) => {
       
-      // console.log(res.data.data[0].fullName);
+      // console.log(res.data.data[0]);
 
       this.setState({parksDescription: res.data.data[0]})
       this.setState({parksImage: res.data.data[0].images[0].url})
       this.setState({parksTitle: res.data.data[0].fullName})
       this.setState({lat: res.data.data[0].latitude})
       this.setState({lng: res.data.data[0].longitude})
+      this.setState({city: res.data.data[0].addresses[0].city})
+      this.setState({state: res.data.data[0].addresses[0].stateCode})
 
       return ;
 
@@ -59,7 +63,15 @@ class StartPage extends Component {
   render () {
     if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
-        <PageInfo parksDescription={this.state.parksDescription} parksImage={this.state.parksImage} parksTitle={this.state.parksTitle} lat={this.state.lat} lng={this.state.lng}/>
+        <PageInfo 
+          parksDescription={this.state.parksDescription} 
+          parksImage={this.state.parksImage} 
+          parksTitle={this.state.parksTitle} 
+          lat={this.state.lat} 
+          lng={this.state.lng}
+          city={this.state.city}
+          state={this.state.state}
+        />
       
       )
     }
