@@ -29,8 +29,14 @@ class Description extends Component {
         <SaveTrailButtons 
           name={this.props.parksTitle}
           location={this.props.state}
+<<<<<<< HEAD
           image={this.props.image}        />
         <NatParksButton parksDescription={this.props}/>
+=======
+          image={this.props.image}
+        />
+        {/* <NatParksButton parksDescription={this.props.parksDescription}/> */}
+>>>>>>> d1efc5d82d54d3c489ee477aaac79f6188154034
 
       </div>
     )
