@@ -1,8 +1,8 @@
 .searchBar {
   width: 55%;
-  margin: auto;
-  margin-top: 170px;
-  margin-bottom: 281px;
+  position: absolute;
+  top: 45%;
+  left: 23%;
   padding: 2%;
   text-align: left;
   border-radius: 10px;
