@@ -28,11 +28,10 @@ class AdditionalDescription extends Component {
             return (
               <li key={item.id}>{item.name}</li>
             )
-          })}
+          })}  
       </div>
     )
   }
-
 };
 
 export default AdditionalDescription;
