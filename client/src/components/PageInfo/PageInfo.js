@@ -8,6 +8,7 @@ import Description from "../Description/Description";
 import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 import { Button } from "react-bootstrap";
+import Carousel from "../Carousel/Carousel"
 
 
 
@@ -36,7 +37,9 @@ class PageInfo extends Component {
     });
   };
 
-
+  componentDidMount() {
+    console.log(this.props.parksDescription)
+  }
 
   render() {
     if (this.state.search) {
@@ -51,20 +54,17 @@ class PageInfo extends Component {
         </div>
       )
     }
+
     return (
       <div className="searchResultsContainer">
-        
+
         <div className="searchResultsBtn">
-          <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style={{ marginLeft: "auto", justifyContent: 'right', border: "none", width: "auto", background: "#144552ac", marginRight: "10%"}} block>
+          <Button href="/" variant="secondary" id="returnHomeBtn" size="lg" style={{ marginLeft: "auto", justifyContent: 'right', border: "none", width: "auto", background: "#144552ac", marginRight: "10%" }} block>
             Back to Search Page
         </Button>
         </div>
-        <Description 
-          parksDescription={this.props.parksDescription} 
-          city={this.props.city}
-          state={this.props.state}
-        />
-
+        <Carousel parksDescription={this.props.parksDescription} />
+      
       </div>
     )
   }
