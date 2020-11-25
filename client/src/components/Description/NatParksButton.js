@@ -10,17 +10,21 @@ class NatParksButton extends Component {
     }]}
 
     this.natParksLookup = this.natParksLookup.bind(this)
-
+    this.natParksLookupClose = this.natParksLookupClose.bind(this)
 
   };
 
   natParksLookup(e) {
     e.preventDefault();
-
-
     this.setState({ viewAdditional: true });
     
   };
+
+  natParksLookupClose(e) {
+    e.preventDefault();
+    this.setState({ viewAdditional: false });
+
+  }
   
 
   render () {
@@ -33,6 +37,7 @@ class NatParksButton extends Component {
     }
     else return (
       <div>
+        <button onClick={this.natParksLookupClose} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Collapse</button>
         <AdditionalDescription parksDescription={this.props.parksDescription} />
       </div>
     )
