@@ -27,9 +27,15 @@ export default {
     return axios.post("/api/trails", trailData);
   },
   getUser: function() {
-    return axios.get("/api/user");
+    return axios.get("/auth/user");
   },
   saveUser: function(userData) {
-    return axios.post("/api/user" + userData)
+    return axios.post("/auth/login", userData)
+  },
+  logoutUser: function(userData) {
+    return axios.post("/auth/logout", userData)
+  },
+  signUpUser: function(userData) {
+    return axios.post("/auth/signup", userData)
   }
 };
