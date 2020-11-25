@@ -29,13 +29,14 @@ export default {
   getUser: function() {
     return axios.get("/auth/user");
   },
-  saveUser: function(userData) {
+  loginUser: function(userData) {
+    console.log("loginUser client side")
     return axios.post("/auth/login", userData)
   },
   logoutUser: function(userData) {
     return axios.post("/auth/logout", userData)
   },
   signUpUser: function(userData) {
-    return axios.post("/auth/signup", userData)
+    return axios.post("/auth/register", userData)
   }
 };

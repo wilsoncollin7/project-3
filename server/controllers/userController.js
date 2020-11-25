@@ -41,10 +41,12 @@ module.exports = {
     }
   },
   auth: function(req, res, next) {
+    console.log("auth function user controller")
 		// console.log(req.body);
 		next();
   },
   authenticate: (req, res) => {
+    console.log("authenticate function user controller")
 		const user = JSON.parse(JSON.stringify(req.user)); // hack
     console.log("****  In authenticate ****");
     const cleanUser = Object.assign({}, user);
