@@ -10,19 +10,16 @@ function LoginInput() {
   function handleInputChange(e) {
     const { name, value } = e.target;
     setFormObject({...formObject, [name]: value})
-    console.log(e.target.name)
   };
 
   function handleFormSubmit(e) {
     e.preventDefault();
     if (formObject.email && formObject.password) {
       API.loginUser({
-        user: {
-          email: formObject.email,
-          password: formObject.password
-        }
+        email: formObject.email,
+        password: formObject.password
       })
-      .then(() => console.log("user saved"))
+      .then(() => console.log("user loged in"))
       .catch(err => console.log(err))
     }
   }

@@ -30,7 +30,6 @@ export default {
     return axios.get("/auth/user");
   },
   loginUser: function(userData) {
-    console.log("loginUser client side")
     return axios.post("/auth/login", userData)
   },
   logoutUser: function(userData) {
