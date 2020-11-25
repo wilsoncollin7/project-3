@@ -14,7 +14,7 @@ const userSchema = new Schema({
 		{ 
       //Store Object Ids in array
 			type: Schema.Types.ObjectId,
-			ref: "Trail"
+			ref: "Trails"
 		}
 	]
 });
