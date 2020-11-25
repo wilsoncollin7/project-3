@@ -15,23 +15,22 @@ class Description extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.parksDescription.fullName)
+    console.log(this.props)
   }
 
   render () {
     return (
       <div  className={`keen-slider__slide number-slide${this.props.index}`}>
         <DescriptionTitle parksTitle={this.props.parksDescription} />
-        <p><Image className="descriptionImage" image={this.props.image}></Image>
-          {this.props.parksDescription}
+        <p><Image className="descriptionImage" image={this.props.images}></Image>
+          {this.props.description}
         </p>
-
+        <p>{this.props.state}</p>
         <SaveTrailButtons 
-          name={this.props.parksDescription.fullName}
-          location={this.props.city + ", " + this.props.state}
-          image={this.props.parksDescription.images[0].url}
-        />
-        {/* <NatParksButton parksDescription={this.props.parksDescription}/> */}
+          name={this.props.parksTitle}
+          location={this.props.state}
+          image={this.props.image}        />
+        <NatParksButton parksDescription={this.props}/>
 
       </div>
     )

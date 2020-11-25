@@ -26,6 +26,10 @@ class NatParksButton extends Component {
 
   }
   
+  componentDidMount() {
+    console.log(this.props)
+  }
+
 
   render () {
     if (!this.state.viewAdditional) {

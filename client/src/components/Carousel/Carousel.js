@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css"
 import "./CarouselStyle.css"
 import Description from "../Description/Description";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({
@@ -20,10 +21,17 @@ export default (props) => {
           {props.parksDescription.map((description, i) => (
             <Description
               index= {i}
-              parksDescription={description.fullName}
-              // city={discription.city}
+              parksName={description.fullName}
+              image={description.images && description.images[0].url}
+              description={description.description}
+              city={description.addresses[0].city}
               state={description.states}
-              image={description.image && description.image[0]}
+              operatingHours={description.operatingHours[0].description}
+              address1={description.addresses[0].line1}
+              address2={description.addresses[0].line2}
+              phoneNumber={description.contacts.phoneNumbers[0].phoneNumber}
+              // entranceFees={description.entranceFees.cost}
+              activities={description.activities}
             />
           ))}
 
