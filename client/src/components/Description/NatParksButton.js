@@ -37,7 +37,9 @@ class NatParksButton extends Component {
     }
     else return (
       <div>
-        <button onClick={this.natParksLookupClose} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Collapse</button>
+        <div className="natParksButtonDiv">
+          <button onClick={this.natParksLookupClose} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Collapse</button>
+        </div>
         <AdditionalDescription parksDescription={this.props.parksDescription} />
       </div>
     )
