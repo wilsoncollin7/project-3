@@ -25,11 +25,11 @@ class Description extends Component {
         <p><Image className="descriptionImage" image={this.props.image}></Image>
           {this.props.parksDescription}
         </p>
-        <p>{this.props.state}</p>
+
         <SaveTrailButtons 
-          name={this.props.parksTitle}
-          location={this.props.state}
-          image={this.props.image}
+          name={this.props.parksDescription.fullName}
+          location={this.props.city + ", " + this.props.state}
+          image={this.props.parksDescription.images[0].url}
         />
         {/* <NatParksButton parksDescription={this.props.parksDescription}/> */}
 
