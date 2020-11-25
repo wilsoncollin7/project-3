@@ -30,6 +30,8 @@ class StartPage extends Component {
     e.preventDefault();
     this.setState({showStart: true})
 
+    // console.log("Button clicked")
+
     const searchName = (this.state.startSearch.split(' ').join('%20'));
 
     const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
@@ -39,14 +41,16 @@ class StartPage extends Component {
     axios.get(queryUrl).then((res) => {
       
 
-      this.setState({parksDescription: res.data.data[0]})
+      this.setState({parksDescription: res.data.data})
       this.setState({parksImage: res.data.data[0].images[0].url})
       this.setState({parksTitle: res.data.data[0].fullName})
-      this.setState({allData: res.data.data[0]})
+      // this.setState({allData: res.data.data})
       this.setState({lat: res.data.data[0].latitude})
       this.setState({lng: res.data.data[0].longitude})
       this.setState({city: res.data.data[0].addresses[0].city})
       this.setState({state: res.data.data[0].addresses[0].stateCode})
+      
+      
 
       // console.log(this.state.allData);
 
@@ -65,7 +69,7 @@ class StartPage extends Component {
   }
 
   render () {
-    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle && this.state.allData) {
+    if(this.state.showStart && this.state.parksDescription && this.state.parksImage && this.state.parksTitle) {
       return (
         <PageInfo 
           parksDescription={this.state.parksDescription} 
@@ -75,6 +79,7 @@ class StartPage extends Component {
           lng={this.state.lng}
           city={this.state.city}
           state={this.state.state}
+
         />
       
       )
@@ -85,6 +90,10 @@ class StartPage extends Component {
         <input onChange={this.handleOnChange} style= {{width: "300px", background:"#F2F1F9", border:"none", padding: "1%", marginRight:"2%"}} type="text" placeholder="Where we going?" value={this.state.search}></input>
         <StateDropdown className="searchbar" />
         <button className="btn" id="searchBtn" style= {{border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} onClick={this.handleSubmitSearch}>Go Out Yonder!</button>
+        
+        {/* <Carousel 
+        parksDescription={this.state.parksDescription}
+        /> */}
         
       </form>
     </div>
