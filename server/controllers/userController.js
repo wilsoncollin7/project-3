@@ -11,18 +11,18 @@ module.exports = {
     }
   },
   register: (req, res) => {
-    const { firstName, lastName, username, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     // ADD VALIDATION
-    db.User.findOne({ 'username': username }, (err, userMatch) => {
+    db.User.findOne({ 'email': email }, (err, userMatch) => {
       if (userMatch) {
         return res.json({
-          error: `Sorry, already a user with the username: ${username}`
+          error: `Sorry, already a user with the email: ${email}`
         });
       }
       const newUser = new db.User({
         'firstName': firstName,
         'lastName': lastName,
-        'username': username,
+        'email': email,
         'password': password
       });
       newUser.save((err, savedUser) => {
@@ -41,10 +41,12 @@ module.exports = {
     }
   },
   auth: function(req, res, next) {
+    console.log("auth function user controller")
 		// console.log(req.body);
 		next();
   },
   authenticate: (req, res) => {
+    console.log("authenticate function user controller")
 		const user = JSON.parse(JSON.stringify(req.user)); // hack
     console.log("****  In authenticate ****");
     const cleanUser = Object.assign({}, user);
