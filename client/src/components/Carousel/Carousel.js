@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css"
 import "./CarouselStyle.css"
 import Description from "../Description/Description";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({

@@ -30,7 +30,7 @@ module.exports = {
         return res.json(savedUser);
       });
     });
-  },
+  }, 
   logout: (req, res) => {
     if (req.user) {
       req.session.destroy();
