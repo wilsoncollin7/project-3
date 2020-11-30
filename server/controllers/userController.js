@@ -46,7 +46,11 @@ module.exports = {
 		next();
   },
   authenticate: (req, res) => {
+<<<<<<< HEAD
     // console.log("######################################authenticate function user controller")
+=======
+    console.log("authenticate function user controller")
+>>>>>>> 5d0302f2f4dc745bd231db844f7046403e5651cc
 		const user = JSON.parse(JSON.stringify(req.body)); // hack
     console.log("****  In authenticate ****");
     const cleanUser = Object.assign({}, user);

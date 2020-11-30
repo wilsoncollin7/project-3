@@ -18,9 +18,6 @@ class PageInfo extends Component {
     this.state = {
       PageInfo: [{
         search: "",
-        newparksDescription: null,
-        newparksImage: null,
-        newparksTitle: null,
       }]
     }
 
@@ -37,9 +34,9 @@ class PageInfo extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log(this.props.parksDescription)
-  }
+  // componentDidMount() {
+  //   console.log(this.props.parksDescription)
+  // }
 
   render() {
     if (this.state.search) {
