@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
 //styling
 import './Login.css';
@@ -43,6 +44,7 @@ function LoginInput() {
           <Button onClick={handleFormSubmit}  variant="secondary" id="loginBtn" size="lg" block>
             Login
           </Button>
+          {/* <Redirect /> */}
         </form>
       </Card.Body>
     </Card>

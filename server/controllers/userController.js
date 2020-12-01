@@ -12,12 +12,12 @@ module.exports = {
   },
   register: (req, res) => {
     const { firstName, lastName, email, password } = req.body;
+    // console.log(req.body)
     // ADD VALIDATION
     db.User.findOne({ 'email': email }, (err, userMatch) => {
       if (userMatch) {
-        return res.json({
-          error: `Sorry, already a user with the email: ${email}`
-        });
+        console.log(`User Already Exists at ${email}`);
+        return;
       }
       const newUser = new db.User({
         'firstName': firstName,
@@ -32,7 +32,7 @@ module.exports = {
     });
   }, 
   logout: (req, res) => {
-    if (req.user) {
+    if (req.body) {
       req.session.destroy();
       res.clearCookie('connect.sid'); // clean up!
       return res.json({ msg: 'logging you out' });
@@ -46,18 +46,16 @@ module.exports = {
 		next();
   },
   authenticate: (req, res) => {
-<<<<<<< HEAD
-    // console.log("######################################authenticate function user controller")
-=======
     console.log("authenticate function user controller")
->>>>>>> 5d0302f2f4dc745bd231db844f7046403e5651cc
-		const user = JSON.parse(JSON.stringify(req.body)); // hack
+    let user = JSON.parse(JSON.stringify(req.body)); // hack
+    console.log(req.body)
     console.log("****  In authenticate ****");
     const cleanUser = Object.assign({}, user);
 		if (cleanUser) {
-			// console.log(`Deleting ${cleanUser.password}`);
+			console.log(`Deleting ${cleanUser.password}`);
 			delete cleanUser.password;
 		}
-		res.json({ user: cleanUser });
+    res.json({ user: cleanUser });
+    console.log(user)
 	}
 };

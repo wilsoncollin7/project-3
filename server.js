@@ -2,8 +2,10 @@ const express = require("express");
 const session = require("express-session");
 const mongoose = require('mongoose');
 const routes = require("./server/routes");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 require("dotenv/config");
-const passport = require("./server/passport/index");
+const passport = require("passport");
 const app = express();
 const MongoStore = require('connect-mongo')(session);
 const PORT = process.env.PORT || 3001;
@@ -15,6 +17,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 } 
+// app.use(cors({
+//   origin: "http://localhost:3000",
+//   credentials: true
+// }));
 
 // initialize passport
 app.use(
@@ -23,9 +29,12 @@ app.use(
     resave: true, 
     saveUninitialized: true })
 );
+app.use(cookieParser("keyboard cat"));
+
 app.use(passport.initialize());
 app.use(passport.session());
-
+require("./server/passport/index")(passport);
+ 
 // Add routes, both API and view
 app.use(routes);
 

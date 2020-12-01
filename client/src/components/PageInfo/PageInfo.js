@@ -3,14 +3,12 @@ import React, { Component } from 'react';
 // components
 // import Container from "../Container/Container";
 // import SearchPage from "../Search/SearchPage";
-import Description from "../Description/Description";
+// import Description from "../Description/Description";
 // import Map from "../Map/Map";
 import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 import { Button } from "react-bootstrap";
 import Carousel from "../Carousel/Carousel"
-
-
 
 class PageInfo extends Component {
   constructor(props) {
@@ -20,7 +18,6 @@ class PageInfo extends Component {
         search: "",
       }]
     }
-
     this.searchChange = this.searchChange.bind(this);
   }
 
@@ -66,6 +63,5 @@ class PageInfo extends Component {
     )
   }
 }
-
 
 export default PageInfo;

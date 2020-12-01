@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // style
 import "./DashboardDetails.css";
 // import components
+import API from "../../utils/API";
 import Saved from "./Saved";
 import Visited from "./Visited";
 import User from "./User";
@@ -51,7 +52,14 @@ function DashboardDetails() {
               >User Account</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="login" eventKey="logout">Logout</Nav.Link>
+              <Nav.Link href="login" eventKey="logout">
+                {API.logoutUser()
+                .then(() => console.log("user logged out"))
+                .catch(err => console.log(err))}
+              
+                Logout
+              
+              </Nav.Link>
             </Nav.Item>
           </Nav>
           <Card.Body>
