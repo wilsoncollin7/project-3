@@ -4,6 +4,7 @@ import "./Description.css"
 
 
 class Image extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props)
   }
