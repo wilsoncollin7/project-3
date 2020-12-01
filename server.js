@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === "production") {
 //   origin: "http://localhost:3000",
 //   credentials: true
 // }));
+// console.log('hello world');
 
 // initialize passport
 app.use(
