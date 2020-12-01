@@ -44,7 +44,6 @@ function LoginInput() {
           <Button onClick={handleFormSubmit}  variant="secondary" id="loginBtn" size="lg" block>
             Login
           </Button>
-          {/* <Redirect /> */}
         </form>
       </Card.Body>
     </Card>
