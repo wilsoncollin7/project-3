@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
+import UserContext from "../../utils/UserContext";
 //styling
 import './Login.css';
 import { Button, Card, InputGroup, FormControl } from "react-bootstrap";
 
 function LoginInput() {
+  const user = useContext(UserContext);
+
   const [formObject, setFormObject] = useState({});
 
   function handleInputChange(e) {
@@ -21,7 +24,21 @@ function LoginInput() {
         password: formObject.password
       })
       .then(() => console.log("user loged in"))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+
+      API.getUser({
+        email: formObject.email
+      })
+      .then(res => {
+        user.setUser({
+          id: res.data[0]._id,
+          firstName: res.data[0].firstName,
+          lastName: res.data[0].lastName,
+          email: res.data[0].email
+        })
+        console.log(user)
+      })
+      .catch(err => console.log(err));
     }
   }
 
@@ -41,7 +58,7 @@ function LoginInput() {
             </InputGroup.Prepend>
             <FormControl name="password" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
           </InputGroup>
-          <Button onClick={handleFormSubmit}  variant="secondary" id="loginBtn" size="lg" block>
+          <Button onClick={handleFormSubmit} variant="secondary" id="loginBtn" size="lg" block>
             Login
           </Button>
         </form>

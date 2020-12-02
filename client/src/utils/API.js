@@ -26,8 +26,8 @@ export default {
   saveSavedTrails: function(trailData) {
     return axios.post("/api/trails", trailData); 
   },
-  getUser: function() {
-    return axios.get("/auth/user");
+  getUser: function(userData) {
+    return axios.post("/auth/user", userData);
   },
   loginUser: function(userData) {
     return axios.post("/auth/login", userData)

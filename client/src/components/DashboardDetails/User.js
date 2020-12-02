@@ -11,6 +11,7 @@ function User() {
   const [visitedTrails, setVisitedTrails] = useState([]);
   // setting user to context API
   const user = useContext(UserContext);
+  console.log(user)
 
   // filters whether trail is saved or visited
   const filterTrails = useCallback(
