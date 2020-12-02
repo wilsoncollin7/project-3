@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React from 'react'
 // import { BrowserRouter as Router } from "react-router-dom";
-=======
-import React from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
->>>>>>> 58034e2e112be0f5a69b0427c1638e8374ecacba
 import { Navbar, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css";
