@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // style
 import "./DashboardDetails.css";
 // import components
+import API from "../../utils/API";
 import Saved from "./Saved";
 import Visited from "./Visited";
 import User from "./User";
@@ -14,6 +15,13 @@ function DashboardDetails() {
     visited: false,
     user: false
   })
+
+  function logout() {
+    console.log("logout clicked")
+    API.logoutUser()
+    .then(() => console.log("user logged out - client side"))
+    .catch(err => console.log(err));
+  };
 
   return (
     <>
@@ -51,7 +59,7 @@ function DashboardDetails() {
               >User Account</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="login" eventKey="logout">Logout</Nav.Link>
+              <Nav.Link href="login" onClick={() => logout()} eventKey="logout">Logout</Nav.Link>
             </Nav.Item>
           </Nav>
           <Card.Body>
