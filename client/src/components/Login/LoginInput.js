@@ -12,7 +12,7 @@ function LoginInput() {
     const { name, value } = e.target;
     setFormObject({...formObject, [name]: value})
   };
-
+ 
   function handleFormSubmit(e) {
     e.preventDefault();
     if (formObject.email && formObject.password) {
@@ -42,7 +42,7 @@ function LoginInput() {
   return (
     <Card>
       <Card.Body className="loginCard">
-        <form className="form-control">
+        <form className="form-control" style>
           <InputGroup onChange={handleInputChange} size="sm" className="mb-3" id="loginEmail">
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroup-sizing-sm">Email</InputGroup.Text>
@@ -55,7 +55,7 @@ function LoginInput() {
             </InputGroup.Prepend>
             <FormControl name="password" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
           </InputGroup>
-          <Button onClick={handleFormSubmit} variant="secondary" id="loginBtn" size="lg" block>
+          <Button onClick={handleFormSubmit}  variant="secondary" id="loginBtn" size="lg" block>
             Login
           </Button>
         </form>

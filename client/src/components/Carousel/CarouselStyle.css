@@ -7,11 +7,18 @@
   font-size: 50px;
   color: #fff;
   font-weight: 500;
-  height: 200px;
+  font-size: 14px;
+  height: 320px;
+  border-radius: 10%;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .navigation-wrapper {
   position: relative;
+  height: 25%;
+  width: 90%;
+  margin-left: 5%;
 }
 
 .dots {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import statesTrim from "us-state-codes";
 // components
 import "./PageInfo.css";
 
@@ -67,26 +67,20 @@ class StateDropdown extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+
+
   handleChange(e) {
-    console.log(e.target.value)
-    const searchState = (e.target.value);
-
-    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchState}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
-
-    
-    axios.get(queryUrl).then((res) => {
-
-      console.log(res.data.data)
-
+    const stateCode = (e.target.value);
+    this.props.stateCodeFunction(statesTrim.getStateCodeByStateName(stateCode))
       // this.setState({stateParksSearch:res.data.data[i]})
-    })
-  }
+    }
+
 
   render() {
     const {usStates} = this.state;
     return (
       
-      <select style={{borderRadius:"5px"}} onChange={this.handleChange}>
+      <select style={{borderRadius:"5px"}} onChange={this.handleChange} >
          {usStates.map(usState => {
            return (
              <option key={usState} value={usState}> {usState} </option>

@@ -13,16 +13,17 @@ export default (props) => {
       setCurrentSlide(s.details().relativeSlide)
     },
   })
-  console.log(props.parksDescription)
+
+  if(props.parksDescription){
   return (
     <>
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
           {props.parksDescription.map((description, i) => (
-            <Description
+            <Description 
               index= {i}
               parksName={description.fullName}
-              image={description.images && description.images[0].url}
+              image={description.images[0] ? description.images[0].url : "No Picture"}
               description={description.description}
               city={description.addresses[0].city}
               state={description.states}
@@ -67,6 +68,10 @@ export default (props) => {
       )}
     </>
   )
+  }
+  else{
+    return(<div>Loading...</div>)
+  }
 }
 
 function ArrowLeft(props) {
