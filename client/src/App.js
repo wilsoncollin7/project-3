@@ -22,7 +22,6 @@ function App() {
     email: "",
   });
 
-  console.log(user)
   
   const [search, setSerch] = useState({
     search: ""

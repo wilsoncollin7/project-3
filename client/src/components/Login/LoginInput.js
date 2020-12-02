@@ -1,14 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 // import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
-import UserContext from "../../utils/UserContext";
 //styling
 import './Login.css';
 import { Button, Card, InputGroup, FormControl } from "react-bootstrap";
 
 function LoginInput() {
-  const user = useContext(UserContext);
-
   const [formObject, setFormObject] = useState({});
 
   function handleInputChange(e) {
@@ -30,13 +27,13 @@ function LoginInput() {
         email: formObject.email
       })
       .then(res => {
-        user.setUser({
-          id: res.data[0]._id,
+        const user = {
           firstName: res.data[0].firstName,
           lastName: res.data[0].lastName,
-          email: res.data[0].email
-        })
-        console.log(user)
+          email: res.data[0].email,
+          id: res.data[0]._id,
+        }
+        localStorage.setItem("user", JSON.stringify(user));
       })
       .catch(err => console.log(err));
     }
