@@ -18,7 +18,8 @@ class StartPage extends Component {
       lat: null,
       lng: null,
       city: null,
-      state: null
+      state: null,
+      stateCode: null
     }]}
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
 
@@ -33,10 +34,11 @@ class StartPage extends Component {
     // console.log("Button clicked")
 
     const searchName = (this.state.startSearch.split(' ').join('%20'));
+    const stateCode = (this.props.usStates)
 
-    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
+    const queryUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateCode}%27limit=5q=${searchName}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
-    // console.log(this.state);
+    console.log(this.props.usStates);
 
     axios.get(queryUrl).then((res) => {
       
@@ -88,7 +90,7 @@ class StartPage extends Component {
       <div>
       <form className="searchBar">
         <input onChange={this.handleOnChange} style= {{width: "300px", background:"#F2F1F9", border:"none", padding: "1%", marginRight:"2%"}} type="text" placeholder="Where we going?" value={this.state.search}></input>
-        <StateDropdown className="searchbar" />
+        <StateDropdown className="searchbar" stateCode={props.usStates}/>
         <button className="btn" id="searchBtn" style= {{border:"none", width: "20%", background: "#144552ac", marginLeft:"2%"}} onClick={this.handleSubmitSearch}>Go Out Yonder!</button>
         
         {/* <Carousel 

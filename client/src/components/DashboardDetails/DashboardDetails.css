@@ -47,7 +47,14 @@ a.nav-link.active:hover {
 
 .removeBtn {
   margin-top: 5%;
+  background: rgba(20, 69, 82, 0.675);
 }
+
+.removeBtn:hover {
+  border: 1px solid black;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.658);
+  background: rgba(20, 69, 82, 0.675);
+ }
 
 .imageTd {
   padding: 0 !important;
