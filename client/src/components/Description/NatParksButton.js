@@ -35,7 +35,7 @@ class NatParksButton extends Component {
     if (!this.state.viewAdditional) {
       return (
         <div className="natParksButtonDiv">
-          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right'}}>Learn more</button>
+          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right', marginRight: "5%"}}>Learn more</button>
         </div>
       )
     }
