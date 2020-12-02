@@ -88,3 +88,7 @@ label {
 .input-group-text {
   background-color: #1445523a;
 }
+
+.userExistsWarning {
+  color: red;
+}
