@@ -12,7 +12,7 @@ class StateDropdown extends Component {
     this.state = {
       stateParksSearch: { stateSearch },
       usStates: [
-        "Alabama",
+        "AL",
         "Alaska",
         "Arizona",
         "Arkansas",
@@ -44,7 +44,7 @@ class StateDropdown extends Component {
         "New Jersey",
         "New Mexico",
         "New York",
-        "North Carolina",
+        "NC",
         "North Dakota",
         "Ohio",
         "Oklahoma",
@@ -69,9 +69,9 @@ class StateDropdown extends Component {
 
   handleChange(e) {
     console.log(e.target.value)
-    const searchState = (e.target.value);
+    const stateCode = (e.target.value);
 
-    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${searchState}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
+    const queryUrl = `https://developer.nps.gov/api/v1/parks?q=${stateCode}&api_key=4Kq5GQcxsnsiytDTgwKcaSBg4c6p3g35ACpCfOeF`;
 
     
     axios.get(queryUrl).then((res) => {
