@@ -6,6 +6,7 @@ import { Card, Table } from 'react-bootstrap';
 
 function Saved() {
   const [savedTrails, setSavedTrails] = useState([])
+  const user = JSON.parse(localStorage.getItem("user"));
   
   // filters whether trail is saved or visited
   const filterTrails = useCallback(
@@ -25,7 +26,7 @@ function Saved() {
   // loads all the saved trails and passes them to filter function
   const loadSavedTrails = useCallback(
     () => {
-      API.getSavedTrails()
+      API.getSavedTrails(user.id)
       .then(res => 
         filterTrails(res.data)
         )

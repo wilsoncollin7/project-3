@@ -19,6 +19,9 @@ const trailSchema = new Schema({
   image: {
     type: String,
     default: "http://placehold.it/200x200"
+  },
+  user: {
+    type: String
   }
 });
 
