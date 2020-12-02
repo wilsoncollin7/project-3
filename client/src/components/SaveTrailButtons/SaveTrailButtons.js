@@ -32,8 +32,8 @@ function SaveTrailButtons (props) {
 
   return (
     <div className="saveTrailButtonsDiv">
-      <button onClick={saveTrail} className="saveTrailButton">Save Trail</button>
-      <button onClick={visitTrail} className="saveTrailButton">I Visited This Trail</button>
+      <button onClick={saveTrail} className="saveTrailButton">Save Park</button>
+      <button onClick={visitTrail} className="saveTrailButton">I Visited This Park</button>
     </div>
   );
 };

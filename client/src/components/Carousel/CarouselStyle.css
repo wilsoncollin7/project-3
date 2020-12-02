@@ -1,17 +1,23 @@
 [class^="number-slide"],
 [class*=" number-slide"] {
-  background: grey;
+  background-color: rgba(182, 182, 182, 0.527);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50px;
   color: #fff;
-  font-weight: 500;
-  font-size: 14px;
-  height: 320px;
-  border-radius: 10%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  height: auto;
+  border-radius: 20px;
   overflow-y: auto;
   max-height: 500px;
+  padding: 2%;
+}
+
+.keen-slider {
+  border-radius: 20px;
 }
 
 .navigation-wrapper {
@@ -31,7 +37,7 @@
   border: none;
   width: 10px;
   height: 10px;
-  background: #c5c5c5;
+  background: #c1d387de;
   border-radius: 50%;
   margin: 0 5px;
   padding: 5px;
@@ -43,7 +49,7 @@
 }
 
 .dot.active {
-  background: #000;
+  background: rgba(20, 69, 82, 0.675);
 }
 
 .arrow {
@@ -53,8 +59,12 @@
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #fff;
+  fill: rgba(20, 69, 82, 0.675);
   cursor: pointer;
+}
+
+.arrow:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 
 .arrow--left {
