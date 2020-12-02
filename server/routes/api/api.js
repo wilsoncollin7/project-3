@@ -2,10 +2,10 @@ const router = require("express").Router();
 const trailController = require("../../controllers/trailController");
 
 router.route("/")
-  .get(trailController.findAll)
   .post(trailController.create);
 
 router.route("/:id")
+  .get(trailController.findAll)
   .put(trailController.updateOne)
   .delete(trailController.remove);
 

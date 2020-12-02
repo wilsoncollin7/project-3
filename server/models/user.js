@@ -8,15 +8,7 @@ const userSchema = new Schema({
 	firstName: { type: String, unique: false },
 	lastName: { type: String, unique: false },
 	email: { type: String, unique: true, required: false },
-	password: { type: String, unique: false, required: false },
-
-	trails: [
-		{ 
-      //Store Object Ids in array
-			type: Schema.Types.ObjectId,
-			ref: "Trails"
-		}
-	]
+	password: { type: String, unique: false, required: false }
 });
 
 // Define schema methods

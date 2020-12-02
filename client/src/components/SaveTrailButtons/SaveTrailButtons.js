@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import "./SaveTrailButtons.css";
 
 function SaveTrailButtons (props) {
+  const user = JSON.parse(localStorage.getItem("user"));
 
   // function that saves the trail
   function saveTrail() {
@@ -11,7 +12,8 @@ function SaveTrailButtons (props) {
       name: props.name,
       location: props.location,
       image: props.image,
-      isVisited: false
+      isVisited: false,
+      user: user.id
     })
       .catch(err => console.log(err))
   };
@@ -22,7 +24,8 @@ function SaveTrailButtons (props) {
       name: props.name,
       location: props.location,
       image: props.image,
-      isVisited: true
+      isVisited: true,
+      user: user.id
     })
       .catch(err => console.log(err))
   };

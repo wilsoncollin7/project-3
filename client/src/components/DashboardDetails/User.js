@@ -32,7 +32,7 @@ function User() {
   // loads all the saved trails and passes them to filter function
   const loadSavedTrails = useCallback(
     () => {
-      API.getSavedTrails()
+      API.getSavedTrails(user.id)
       .then(res => 
         filterTrails(res.data)
         )

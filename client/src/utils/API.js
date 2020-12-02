@@ -3,12 +3,12 @@ import axios from "axios";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // gets all visited trails
-  getVisitedTrails: function() {
-    return axios.get("/api/trails");
+  getVisitedTrails: function(id) {
+    return axios.get("/api/trails/" + id);
   },
   // gets all saved trails
-  getSavedTrails: function() {
-    return axios.get("/api/trails");
+  getSavedTrails: function(id) {
+    return axios.get("/api/trails/" + id);
   },
   // deletes visited trail
   deleteVisitedTrails: function(id) {

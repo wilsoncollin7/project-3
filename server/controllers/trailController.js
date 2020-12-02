@@ -5,7 +5,7 @@ module.exports = {
     // Get all trails
     findAll: function(req, res) {
       db.Trails
-        .find(req.query)
+        .find({"user": req.params.id})
         .sort({ date: -1 })
         .then(dbModel => {
           res.json(dbModel)
