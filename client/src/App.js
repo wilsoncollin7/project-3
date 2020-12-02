@@ -13,11 +13,6 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 58034e2e112be0f5a69b0427c1638e8374ecacba
 function App() {
   // setting user state to be passed as context 
   const [user, setUser] = useState({
