@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 // import SearchPage from "../Search/SearchPage";
 // import Description from "../Description/Description";
 // import Map from "../Map/Map";
-import StateDropdown from "./StateDropdown";
+// import StateDropdown from "./StateDropdown";
 import "../PageInfo/PageInfo.css";
 import { Button } from "react-bootstrap";
 import Carousel from "../Carousel/Carousel"
@@ -36,18 +36,18 @@ class PageInfo extends Component {
   // }
 
   render() {
-    if (this.state.search) {
-      return (
-        <div>
-          <form className="searchBar">
-            <input style={{ width: "300px", background: "#F2F1F9", border: "none", padding: "1%" }} type="text" placeholder="Where we going?" onChange={this.searchChange} value={this.state.search}></input>
-            <button className="btn btn-success" onClick={this.SearchButton}>Go Out Yonder!</button>
-            <StateDropdown className="searchbar" />
-          </form>
+    // if (this.state.search) {
+    //   return (
+    //     <div>
+    //       <form className="searchBar">
+    //         <input style={{ width: "300px", background: "#F2F1F9", border: "none", padding: "1%" }} type="text" placeholder="Where we going?" onChange={this.searchChange} value={this.state.search}></input>
+    //         <button className="btn btn-success" onClick={this.SearchButton}>Go Out Yonder!</button>
+    //         <StateDropdown className="searchbar" />
+    //       </form>
 
-        </div>
-      )
-    }
+    //     </div>
+    //   )
+    // }
 
     return (
       <div className="searchResultsContainer">
@@ -58,7 +58,7 @@ class PageInfo extends Component {
         </Button>
         </div>
         <Carousel parksDescription={this.props.parksDescription} />
-      
+
       </div>
     )
   }
