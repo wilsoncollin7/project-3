@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   // setting user state to be passed as context 
   const [user, setUser] = useState({
