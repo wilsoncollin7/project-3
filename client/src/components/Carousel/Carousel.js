@@ -14,7 +14,7 @@ export default (props) => {
     },
   })
 
-  if(props.parksDescription){
+
   return (
     <>
       <div className="navigation-wrapper">
@@ -27,7 +27,7 @@ export default (props) => {
               description={description.description}
               city={description.addresses[0].city}
               state={description.states}
-              operatingHours={description.operatingHours[0].description}
+              operatingHours={description.operatingHours[0] ? description.operatingHours[0].description : "None"}
               address1={description.addresses[0].line1}
               address2={description.addresses[0].line2}
               phoneNumber={description.contacts.phoneNumbers[0].phoneNumber}
@@ -68,10 +68,8 @@ export default (props) => {
       )}
     </>
   )
-  }
-  else{
-    return(<div>Loading...</div>)
-  }
+  
+
 }
 
 function ArrowLeft(props) {
