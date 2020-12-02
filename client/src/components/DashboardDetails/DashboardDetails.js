@@ -21,6 +21,7 @@ function DashboardDetails() {
     API.logoutUser()
     .then(() => console.log("user logged out - client side"))
     .catch(err => console.log(err));
+    localStorage.clear();
   };
 
   return (

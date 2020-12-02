@@ -12,7 +12,7 @@ function LoginInput() {
     const { name, value } = e.target;
     setFormObject({...formObject, [name]: value})
   };
-
+ 
   function handleFormSubmit(e) {
     e.preventDefault();
     if (formObject.email && formObject.password) {
@@ -21,7 +21,21 @@ function LoginInput() {
         password: formObject.password
       })
       .then(() => console.log("user loged in"))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+
+      API.getUser({
+        email: formObject.email
+      })
+      .then(res => {
+        const user = {
+          firstName: res.data[0].firstName,
+          lastName: res.data[0].lastName,
+          email: res.data[0].email,
+          id: res.data[0]._id,
+        }
+        localStorage.setItem("user", JSON.stringify(user));
+      })
+      .catch(err => console.log(err));
     }
   }
 
