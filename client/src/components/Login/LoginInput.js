@@ -28,7 +28,7 @@ function LoginInput() {
   return (
     <Card>
       <Card.Body className="loginCard">
-        <form className="form-control">
+        <form className="form-control" style>
           <InputGroup onChange={handleInputChange} size="sm" className="mb-3" id="loginEmail">
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroup-sizing-sm">Email</InputGroup.Text>
