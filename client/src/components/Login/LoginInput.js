@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
 //styling
 import './Login.css';
@@ -7,6 +7,8 @@ import { Button, Card, InputGroup, FormControl } from "react-bootstrap";
 
 function LoginInput() {
   const [formObject, setFormObject] = useState({});
+  const [noUser, setNoUser] = useState(false);
+  const history = useHistory();
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -20,20 +22,29 @@ function LoginInput() {
         email: formObject.email,
         password: formObject.password
       })
-      .then(() => console.log("user loged in"))
+      .then(() => {
+        console.log("Logging in User...");
+      })
       .catch(err => console.log(err));
 
       API.getUser({
         email: formObject.email
       })
       .then(res => {
-        const user = {
-          firstName: res.data[0].firstName,
-          lastName: res.data[0].lastName,
-          email: res.data[0].email,
-          id: res.data[0]._id,
+        if (res.data === "User Does Not Exist") {
+          console.log("no user exists")
+          setNoUser(true);
+        } else {
+          setNoUser(false);
+          const user = {
+            firstName: res.data[0].firstName,
+            lastName: res.data[0].lastName,
+            email: res.data[0].email,
+            id: res.data[0]._id,
+          }
+          localStorage.setItem("user", JSON.stringify(user));
+          history.goBack();
         }
-        localStorage.setItem("user", JSON.stringify(user));
       })
       .catch(err => console.log(err));
     }
@@ -55,10 +66,11 @@ function LoginInput() {
             </InputGroup.Prepend>
             <FormControl name="password" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
           </InputGroup>
-          <Button onClick={handleFormSubmit}  variant="secondary" id="loginBtn" size="lg" block>
+          <Button onClick={handleFormSubmit} variant="secondary" id="loginBtn" size="lg" block>
             Login
           </Button>
         </form>
+        {noUser && <p className="userExistsWarning">*No User Found</p>}
       </Card.Body>
     </Card>
   )
