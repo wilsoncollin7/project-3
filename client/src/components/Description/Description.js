@@ -11,8 +11,8 @@ class Description extends Component {
     super(props)
     this.state = {
     }
-    
   }
+  
 
   componentDidMount() {
     console.log(this.props.parksName)
@@ -26,11 +26,14 @@ class Description extends Component {
             <DescriptionTitle parksTitle={this.props.parksName} />  
             <p>{this.props.city},{this.props.state}</p>
             <p className="info-box">{this.props.description}</p>
-            <SaveTrailButtons 
-            name={this.props.parksTitle}
-            location={this.props.state}
-            image={this.props.image}
-            />
+            {localStorage.getItem("user") && 
+              <SaveTrailButtons 
+                name={this.props.parksName}
+                location={this.props.city}
+                image={this.props.image}
+              />
+            }
+            
             <NatParksButton parksDescription={this.props}/>
           </div>
         </p>

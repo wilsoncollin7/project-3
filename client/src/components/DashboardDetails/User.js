@@ -1,7 +1,5 @@
-import React, { useContext, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import API from "../../utils/API";
-// context API
-import UserContext from "../../utils/UserContext";
 // styling
 import "./DashboardDetails.css";
 import { Card } from 'react-bootstrap';
@@ -10,8 +8,7 @@ function User() {
   const [savedTrails, setSavedTrails] = useState([]);
   const [visitedTrails, setVisitedTrails] = useState([]);
   // setting user to context API
-  const user = useContext(UserContext);
-  console.log(user)
+  const user = JSON.parse(localStorage.getItem("user"));
 
   // filters whether trail is saved or visited
   const filterTrails = useCallback(
@@ -35,7 +32,7 @@ function User() {
   // loads all the saved trails and passes them to filter function
   const loadSavedTrails = useCallback(
     () => {
-      API.getSavedTrails()
+      API.getSavedTrails(user.id)
       .then(res => 
         filterTrails(res.data)
         )

@@ -6,8 +6,8 @@ module.exports = {
     const { email } = req.body
     // console.log(req.body)
     db.User.find({ 'email': email }, (err, found) => {
-      if (err) {
-        console.log(err);
+      if (found.length === 0) {
+        res.send("User Does Not Exist")
       } else {
         res.send(found);
       }
@@ -20,7 +20,7 @@ module.exports = {
     db.User.findOne({ 'email': email }, (err, userMatch) => {
       if (userMatch) {
         console.log(`User Already Exists at ${email}`);
-        return;
+        return res.send("User Already Exists");
       }
       const newUser = new db.User({
         'firstName': firstName,
