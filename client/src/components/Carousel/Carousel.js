@@ -19,7 +19,7 @@ export default (props) => {
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
           {props.parksDescription.map((description, i) => (
-            <Description
+            <Description 
               index= {i}
               parksName={description.fullName}
               image={description.images && description.images[0].url}

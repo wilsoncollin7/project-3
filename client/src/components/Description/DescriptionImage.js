@@ -7,6 +7,7 @@ class Image extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props)
+    console.log(this.props)
   }
 
   render () {
