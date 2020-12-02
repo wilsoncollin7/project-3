@@ -2,14 +2,17 @@ const db = require("../models");
 
 // Defining methods for the userController
 module.exports = {
-  getUserInfo: (req, res, next) => {
-    // console.log(req.user);
-    if (req.user) {
-      return res.json({ user: req.user });
-    } else {
-      return res.json({ user: null });
-    }
-  },
+  getUserInfo: (req, res) => {
+    const { email } = req.body
+    // console.log(req.body)
+    db.User.find({ 'email': email }, (err, found) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(found);
+      }
+    })
+  }, 
   register: (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     // console.log(req.body)
@@ -46,16 +49,16 @@ module.exports = {
 		next();
   },
   authenticate: (req, res) => {
-    console.log("authenticate function user controller")
+    // console.log("authenticate function user controller")
     let user = JSON.parse(JSON.stringify(req.body)); // hack
-    console.log(req.body)
+    // console.log(req.body)
     console.log("****  In authenticate ****");
     const cleanUser = Object.assign({}, user);
 		if (cleanUser) {
-			console.log(`Deleting ${cleanUser.password}`);
+			// console.log(`Deleting ${cleanUser.password}`);
 			delete cleanUser.password;
 		}
     res.json({ user: cleanUser });
-    console.log(user)
+    // console.log(user)
 	}
 };

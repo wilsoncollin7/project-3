@@ -13,15 +13,17 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   // setting user state to be passed as context 
   const [user, setUser] = useState({
+    id: "",
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
   });
+
+  console.log(user)
+  
   const [search, setSerch] = useState({
     search: ""
   });
