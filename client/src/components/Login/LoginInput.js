@@ -64,7 +64,7 @@ function LoginInput() {
             <InputGroup.Prepend>
               <InputGroup.Text id="inputGroup-sizing-sm">Password</InputGroup.Text>
             </InputGroup.Prepend>
-            <FormControl name="password" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+            <FormControl name="password" type="password" aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
           </InputGroup>
           <Button onClick={handleFormSubmit} variant="secondary" id="loginBtn" size="lg" block>
             Login
