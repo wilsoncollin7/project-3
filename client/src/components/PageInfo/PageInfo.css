@@ -38,6 +38,12 @@ select {
   padding-top: 10px;
 }
 
+.errorText {
+  color: rgba(99, 6, 6, 0.664);
+  margin-left: 2px;
+  text-align: center;
+}
+
 #searchBtn:hover, #returnHomeBtn:hover {
   border: 1px solid black;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.658);
