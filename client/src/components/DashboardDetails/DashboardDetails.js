@@ -37,7 +37,7 @@ function DashboardDetails() {
                 user: false
               })} 
               eventKey="saved"
-              >Saved Attractions</Nav.Link>
+              >Saved Parks</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link 
@@ -47,7 +47,7 @@ function DashboardDetails() {
                 user: false
               })} 
               eventKey="visited"
-              >Visited Attractions</Nav.Link>
+              >Visited Parks</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link 
