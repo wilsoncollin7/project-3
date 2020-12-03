@@ -79,7 +79,7 @@
   fill: rgba(255, 255, 255, 0.5);
 }
 
-@media only screen and (min-height: 1000px) {
+@media only screen and (min-height: 1200px) {
   [class^="number-slide"],
   [class*=" number-slide"] {
     max-height: 800px;
