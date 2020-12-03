@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./Description.css"
 import NatParksButton from "./NatParksButton"
 import SaveTrailButtons from "../SaveTrailButtons/SaveTrailButtons";
 import DescriptionImage from "./DescriptionImage"
-import DescriptionTitle from './DescriptionTitle';
+import DescriptionTitle from "./DescriptionTitle";
 
 //this is the description of the trail/park
 class Description extends Component {
@@ -13,14 +13,13 @@ class Description extends Component {
     }
   }
   
-
   componentDidMount() {
     console.log(this.props.parksName)
   }
 
   render () {
     return (
-      <div  className={`keen-slider__slide number-slide${this.props.index}`}>
+      <div className={`keen-slider__slide number-slide${this.props.index}`}>
         <p><DescriptionImage className="descriptionImage" image={this.props.image}></DescriptionImage>
           <div>
             <DescriptionTitle parksTitle={this.props.parksName} />  
@@ -33,11 +32,9 @@ class Description extends Component {
                 image={this.props.image}
               />
             }
-            
-            <NatParksButton parksDescription={this.props}/>
           </div>
         </p>
-
+        <NatParksButton parksDescription={this.props}/>
       </div>
     )
   }

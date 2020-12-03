@@ -1,12 +1,13 @@
 .descriptionContainer {
-  width: 80%;
+  width: 70%;
+  max-height: 800px;
+  overflow-y: auto;
   margin: auto;
   margin-top: 30px;
-  padding: 2%;
+  padding: 5%;
   text-align: left;
   border-radius: 10px;
-  padding: 2%;
-  background-color: rgba(182, 182, 182, 0.527);
+  background-color: rgba(20, 69, 82, 0.675);
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -35,12 +36,10 @@
   width: 92%;
 }
 
-
 .natParksButton {
   border: none;
   width: auto;
   background: #c1d387de;
-  justify-content: right;
   text-align: "center";
   border-radius: 4px;
   font-weight: 400;
@@ -51,9 +50,16 @@
 
 .natParksButtonDiv {
   display: flex;
-  justify-content: right;
 }
 
 .natParksButton:hover {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.658);
- }
+}
+
+.additionalDetailsDiv {
+  float: left;
+}
+
+.additionalActivitiesDiv {
+  float: right;
+}
