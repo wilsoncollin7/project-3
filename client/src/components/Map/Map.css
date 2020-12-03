@@ -19,3 +19,9 @@
   width: 100px;
   margin-right: 50px;
 }
+
+.map {
+  height: 300px;
+  width: 375px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
