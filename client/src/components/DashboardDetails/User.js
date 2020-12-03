@@ -56,8 +56,8 @@ function User() {
           <p>Email: {user.email}</p>
         </div>
         <div className="col-lg-6">
-          <p>Numbers of trails hiked: {savedTrails.length}</p>
-          <p>Number of saved hikes: {visitedTrails.length}</p>
+          <p>Numbers of visited parks: {savedTrails.length}</p>
+          <p>Number of saved parks: {visitedTrails.length}</p>
         </div>
       </div>
     </Card.Body>
