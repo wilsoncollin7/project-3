@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./Description.css"
 
 class DescriptionTitle extends Component {
@@ -6,18 +6,13 @@ class DescriptionTitle extends Component {
     super(props)
     this.state = {
     }
-    
   }
-
-  // componentDidMount() {
-  //   console.log(this.props.parksTitle)
-  // }
 
   render() {
     return (
-      <div>
+      <>
         <p className="descriptionTitle">{this.props.parksTitle}</p>
-      </div>
+      </>
     )
   }
 }

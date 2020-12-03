@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import AdditionalDescription from "./AdditionalDescription"
 import "./Description.css";
 
@@ -35,21 +35,19 @@ class NatParksButton extends Component {
     if (!this.state.viewAdditional) {
       return (
         <div className="natParksButtonDiv">
-          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right', marginRight: "5%"}}>Learn more</button>
+          <button onClick={this.natParksLookup} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: "right", marginRight: "5%"}}>Learn more</button>
         </div>
       )
     }
     else return (
-      <div>
+      <>
         <div className="natParksButtonDiv">
-          <button onClick={this.natParksLookupClose} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: 'right', marginRight: "10px"}}>Collapse</button>
+          <button onClick={this.natParksLookupClose} className="natParksButton" variant="secondary"size="lg" style={{ marginLeft: "auto", justifyContent: "right", marginRight: "5%" }}>Collapse</button>
         </div>
         <AdditionalDescription parksDescription={this.props.parksDescription} />
-      </div>
+      </>
     )
   }
 };
   
-
-
 export default NatParksButton;

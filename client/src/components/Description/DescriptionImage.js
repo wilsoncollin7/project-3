@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./Description.css"
-
-
 
 class Image extends Component {
   // eslint-disable-next-line no-useless-constructor
