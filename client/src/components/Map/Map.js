@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import "./Map.css";
+
   
 class Map extends React.Component {
   constructor(props) {

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import API from "../../utils/API";
 // style
 import "./SaveTrailButtons.css";
 
 function SaveTrailButtons (props) {
   const user = JSON.parse(localStorage.getItem("user"));
+  const [saveBtn, setSaveBtn] = useState(false);
+  const [visitBtn, setVisitBtn] = useState(false);
 
   // function that saves the trail
   function saveTrail() {
@@ -15,7 +17,8 @@ function SaveTrailButtons (props) {
       isVisited: false,
       user: user.id
     })
-      .catch(err => console.log(err))
+    .then(() => setSaveBtn(true))
+    .catch(err => console.log(err))
   };
 
   // function that saves the visited trail
@@ -27,13 +30,14 @@ function SaveTrailButtons (props) {
       isVisited: true,
       user: user.id
     })
-      .catch(err => console.log(err))
+    .then(() => setVisitBtn(true))
+    .catch(err => console.log(err))
   };
 
   return (
     <div className="saveTrailButtonsDiv">
-      <button onClick={saveTrail} className="saveTrailButton">Save Park</button>
-      <button onClick={visitTrail} className="saveTrailButton">I Visited This Park</button>
+      {!saveBtn ? <button onClick={saveTrail} className="saveTrailButton">Save Park</button> : <button className="saveTrailButton">SAVED</button>}
+      {!visitBtn ? <button onClick={visitTrail} className="saveTrailButton">I Visited This Park</button> : <button className="saveTrailButton">VISITED</button>}
     </div>
   );
 };
