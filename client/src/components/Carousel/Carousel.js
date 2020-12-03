@@ -33,6 +33,8 @@ export default (props) => {
               phoneNumber={description.contacts.phoneNumbers[0].phoneNumber}
               // entranceFees={description.entranceFees.cost}
               activities={description.activities}
+              lat={description.latitude}
+              lng={description.longitude}
             />
           ))}
 

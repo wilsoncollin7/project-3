@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Description.css"
+import Map from "../Map/Map";
 
 class AdditionalDescription extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class AdditionalDescription extends Component {
             <p>{this.props.parksDescription.address1} {this.props.parksDescription.address2}</p>
           <h4>Phone Number</h4>  
             <p>{this.props.parksDescription.phoneNumber}</p>
+          <Map lat={this.props.parksDescription.lat} lng={this.props.parksDescription.lng}/>
         </div>
         <div className="additionalActivitiesDiv">
           <h4>List of Available Activities</h4>
